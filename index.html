@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ArtMeMaster</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+    <script src="js/vue.js"></script>
+    <script src="js/script.js"></script>
+    <script assync src="js/jquery.js"></script>
+    <script assync src="js/jquery-migrate.js"></script>
+    <script assync defer src="js/slick.min.js"></script>
+    <script assync src="js/jquery.maskedinput.js"></script>
+    <script assync src="js/lightbox.js"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo-img">
+            </div>
+            <div class="header-contacts">
+                <div class="time-work">
+                    <div class="time-itself">
+                        <img src="img/clock.png" alt="clock-img">
+                        <p>Режим работы:</p>
+                    </div>
+                    <div class="description-time">
+                        <p>ежедневно с 11:00 до 21:00</p>
+                    </div>
+                </div>
+                <div class="contacts-itself">
+                    <div class="phone-contacts">
+                        <a href="tel:+79776780883">+7 (977) 678-08-83</a>
+                        <img src="img/phone-icon.png" alt="phone-icon">
+                    </div>
+                    <div class="adress-contacts">
+                        <p>ул. Скобелевская д.12 (м. Скобелевская)</p>
+                        <img src="img/adress.png" alt="adress-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu">
+        <div class="container menu-itself">
+            <a href="#" v-for="item in menu">{{item.name}}</a>
+        </div>
+    </section>
+    <section class="slider">
+        <div class="slider-itself">
+            <div class="slide-one slides"><a href="#"></a></div>
+            <div class="slide-one slides"><a href="#"></a></div>
+            <div class="slide-one slides"><a href="#"></a></div>
+        </div>
+    </section>
+    <section class="hello-1">
+        <div class="hello-1-with-img container">
+            <img src="img/hello-1.png" alt="hello-1">
+            <p>Наши стилисты, визажисты и nail-мастера знают, какой силой обладает красота, поэтому они с огромной радостью помогут Вам ее подчеркнуть или создать совершенно новый образ, который никого не оставит равнодушным.
+            </p>
+        </div>
+    </section>
+    <section class="offer">
+        <div class="container">
+            <h2>Что могут предложить наши мастера:</h2>
+            <div class="all-offers">
+                <offer-items v-for="item in offers" :offers="item"></offer-items>
+            </div>
+            <a class="button-price" href="/price-list.html" target="_blank">Прайс-лист</a>
+            
+        </div>
+    </section>
+    <section class="hello-2">
+        <div class="container">
+            <p>Наши мастера помогут Вам достичь желаемых результатов и проконсультируют по всем интересующим вас вопросам. </p>
+            <p>Для работы мы используем только профессиональные материалы, которые подбираются согласно вашим пожеланиям. </p>
+        </div>
+    </section>
+    <section class="common">
+        <div class="container">
+            <div class="common-text">
+                <h2>Приходите в Art Me Master и купайтесь в комплиментах окружающих!</h2>
+                <p>Оставьте номер телефона, и мы с вами свяжемся для записи.</p>
+            </div>
+            <div class="common-form">
+                <form action="/send/send.php" name="common">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                    <input type="text" name="phone" class="phone-form"  placeholder="+7 (___) ___-__-__ ">
+                    <div class="button-send common-send">Отправить</div>
+                </form>
+                <div class="description hide">Мы скоро Вам позвоним</div>
+            </div>
+        </div>
+    </section>
+    <section class="galery">
+        <div class="container">
+            <div class="section-zagolovok">   
+                <h2>{{name}}</h2>
+            </div>
+            <div class="galery-block">
+                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
+                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
+                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
+                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
+                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
+                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
+                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
+                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
+            </div>
+        </div>
+    </section>
+    <section class="video">
+        <div class="container">
+            <div class="section-zagolovok">   
+                <h2>{{name}}</h2>
+            </div>
+            <div class="video-slider">
+                <div class="slider-for">
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><video controls poster="video/img/snow.png" width="550px" height="350px"><source src="video/video/video-1.mp4" type="video/mp4"></video></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><video controls poster="video/img/snow.png" width="100%" height="100%"><source src="video/video/video-1.mp4" type="video/mp4"></video></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><video controls poster="video/img/snow.png" width="100%" height="100%"><source src="video/video/video-1.mp4" type="video/mp4"></video></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><video controls poster="video/img/snow.png" width="100%" height="100%"><source src="video/video/video-1.mp4" type="video/mp4"></video></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><video controls poster="video/img/snow.png" width="100%" height="100%"><source src="video/video/video-1.mp4" type="video/mp4"></video></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><video controls poster="video/img/snow.png" width="100%" height="100%"><source src="video/video/video-1.mp4" type="video/mp4"></video></div></div>
+                </div>
+                <div class="slider-nav">
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><img src="video/img/snow.png" ></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><img src="video/img/snow.png" ></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><img src="video/img/snow.png" ></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><img src="video/img/snow.png" ></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><img src="video/img/snow.png" ></div></div>
+                    <div class="video-item"><p>Снежные просторы</p><div class="video-itself"><div class="shadow-video"></div><img src="video/img/snow.png" ></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="otzivi">
+        <div class="container">
+            <div class="section-zagolovok">   
+                <h2>{{name}}</h2>
+            </div>
+            <div class="otzivi-slider">
+                <div class="otziv-item">
+                    <div class="otziv-container">
+                        <div class="img-otziv"><img src="img/otzivi/face-1.png"></div>
+                        <p>Мне все очень понравилось! Умело подстригли волосы, приятные сотрудницы и недорого. Буду рекомендовать всем своим друганам)</p>
+                    </div>
+                </div>
+                <div class="otziv-item">
+                    <div class="otziv-container">
+                        <div class="img-otziv"><img src="img/otzivi/face-1.png"></div>
+                        <p>Мне все очень понравилось! Умело подстригли волосы, приятные сотрудницы и недорого. Буду рекомендовать всем своим друганам)</p>
+                    </div>
+                </div>
+                <div class="otziv-item">
+                    <div class="otziv-container">
+                        <div class="img-otziv"><img src="img/otzivi/face-1.png"></div>
+                        <p>Мне все очень понравилось! Умело подстригли волосы, приятные сотрудницы и недорого. Буду рекомендовать всем своим друганам)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article class="otzivi-form">
+            <modal-form  :settings="settings"></modal-form>
+    </article>
+
+
+
+
+</body>
+</html>
+
+
+

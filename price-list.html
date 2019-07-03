@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ArtMeMaster-Price</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/vue.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo-img">
+            </div>
+            <div class="header-contacts">
+                <div class="time-work">
+                    <div class="time-itself">
+                        <img src="img/clock.png" alt="clock-img">
+                        <p>Режим работы:</p>
+                    </div>
+                    <div class="description-time">
+                        <p>ежедневно с 11:00 до 21:00</p>
+                    </div>
+                </div>
+                <div class="contacts-itself">
+                    <div class="phone-contacts">
+                        <a href="tel:+79776780883">+7 (977) 678-08-83</a>
+                        <img src="img/phone-icon.png" alt="phone-icon">
+                    </div>
+                    <div class="adress-contacts">
+                        <p>ул. Скобелевская д.12 (м. Скобелевская)</p>
+                        <img src="img/adress.png" alt="adress-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu">
+        <div class="container menu-itself">
+            <a href="#" v-for="item in menu">{{item.name}}</a>
+        </div>
+    </section>
+</body>
+</html>
