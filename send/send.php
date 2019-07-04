@@ -24,30 +24,36 @@ class SendForms {
     public function sendmail() {
 
 
-
+          echo $_POST;
            
              
            
-         if ($this->name != '') {
-            $this->name = htmlspecialchars($this->name);
-            $this->name = trim($this->name);
-         }
-         if ($this->email != '') {
-            $this->email = htmlspecialchars($this->email);
-            $this->email = trim($this->email);
-         }
-         if ($this->phone != '') {
-            $this->phone = htmlspecialchars($this->phone);
-            $this->phone = trim($this->phone);
-         }
-         if ($this->text != '') {
-            $this->text = htmlspecialchars($this->text);
-            $this->text = trim($this->text);
-         }
+        //  if ($this->name != '') {
+        //     $this->name = htmlspecialchars($this->name);
+        //     $this->name = trim($this->name);
+        //  }
+        //  if ($this->email != '') {
+        //     $this->email = htmlspecialchars($this->email);
+        //     $this->email = trim($this->email);
+        //  }
+        //  if ($this->phone != '') {
+        //     $this->phone = htmlspecialchars($this->phone);
+        //     $this->phone = trim($this->phone);
+        //  }
+        //  if ($this->text != '') {
+        //     $this->text = htmlspecialchars($this->text);
+        //     $this->text = trim($this->text);
+        //  }
 
-         mail($this->to_mail, "Хочу записаться", "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone,"From: artmemaster.ru \r\n"."Content-type: text/plain; charset=UTF-8\r\n");
+        //  mail($this->to_mail, "Хочу записаться", "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone,"From: artmemaster.ru \r\n"."Content-type: text/plain; charset=UTF-8\r\n");
         
-                            
+    
+        
+
+
+
+
+
 //         if ($this->id_of_form == 'follow') {
 //         mail($this->to_mail, "Хочу подписаться", "Мое имя:   ".$this->name." \r\nРассылку присылать на:   ".$this->email,"From: vandeco.ru\r\n"."Content-type: text/plain; charset=UTF-8\r\n");
 //         } elseif ($this->id_of_form == 'contact') {

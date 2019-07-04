@@ -216,34 +216,98 @@ window.addEventListener('DOMContentLoaded', function() {
                 <div class="modal-form-itself">
                     <form action="/send/send.php" name="modal">
                         <div class="close-btn">X</div>
-                        <input type="hidden" name="name_form" value="" class="form-item">
+                        <input type="hidden" name="name_form" v-bind:value="settings.hidden" class="form-item">
                         <input type="text" name="name" placeholder="Ваше имя" class="form-item">
-                        <input type="text" name="phone" class="phone-form"  placeholder="+7 (___) ___-__-__ " class="form-item">
-                        <textarea rows="7" cols="42" name="otziv" class="form-item" placeholder="Ваш отзыв"></textarea>
-                        <div class="form-group modal-file form-item">
+                        <input type="text" name="phone" class="phone-form form-item"  placeholder="+7 (___) ___-__-__ " >
+                        <textarea rows="7" cols="42" v-if="settings.textarea"   name="otziv" class="form-item" placeholder="Ваш отзыв"></textarea>
+                        <div class="form-group modal-file form-item" v-if="settings.file"  >
                             <label for="modal__file" class="textover">Файл не загружен</label>
-                            <input type="file" id="modal__file" name="file"  placeholder="Файл " value="">
+                            <input type="file" id="modal__file" name="file"   value=""></input>
                         </div>
-                        <div class="description hide form-item">{{settings.description}}</div>
-                        <div class="button-send-modal form-item">Отправить</div>
+                        
+                        <div :data-button = "settings.button" class="button-send-modal  form-item" >Отправить</div>
                     </form>
-                    
+                    <div class="description hide">{{settings.description}}</div>
                 </div>
             </div>
           `
         })
 
-        new Vue({
+       let modal_form = new Vue({
             el: '.otzivi-form',
             data: {
-              settings: [
-                  { description: 'Ваш отзыв отправлен',},
-                 
-              ],
+              settings: 
+                  { 
+                    description: 'Ваш отзыв отправлен',
+                    hidden : 'otzivi',
+                    textarea: true,
+                    file: true,
+                    button: "otzivi-btn"
+
+                    
+                  },
             }
         })
 
 
+       document.querySelector('input[type=file]').addEventListener('change', ()=>{
+            let value = document.querySelector('input[type=file]').value.split ('/');
+            if (value.length == 1){
+              value = document.querySelector('input[type=file]').value.split ('\\').pop();
+            };
+              document.querySelector('.modal-file label').innerHTML = value;
+
+            
+       });
+
+
+
+
+       document.querySelector('.modal-form .button-send-modal').addEventListener('click', () => {
+           
+             
+                  sendModal(document.forms.modal);
+
+              });
+
+
+           //   document.forms.common 
+
+              function sendModal(form) {
+
+
+                   
+                    var formData = new FormData(form);
+
+                    
+
+                    // добавить к пересылке ещё пару ключ - значение
+                    //formData.append("name", "Fred");
+
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "/send/send.php");
+                    xhr.send(formData);
+
+                    xhr.onreadystatechange = function() {
+                    if (this.readyState != 4) return;
+
+                    if (this.status != 200) {
+                    console.log( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+                    return;
+                    } else {
+                      console.log(this.responseText);
+                      document.querySelector('.modal-form form').classList.add('hide');
+                      setTimeout(() =>{
+                        document.querySelector('.modal-form .description').classList.remove('hide');
+                      }, 300);
+
+                    }
+
+                    }
+              }
+      
+ 
 
 
 });

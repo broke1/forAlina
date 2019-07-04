@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Ubuntu";
   src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf");
@@ -828,7 +829,7 @@ a:hover {
 
 .modal-form .modal-form-itself {
   width: 600px;
-  height: 500px;
+  height: auto;
   border-radius: 5px;
   background: #ffffff;
   padding: 30px;
@@ -861,6 +862,8 @@ a:hover {
       -ms-flex-pack: start;
           justify-content: flex-start;
   position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .modal-form .modal-form-itself form .form-item {
@@ -873,6 +876,7 @@ a:hover {
   line-height: 180%;
   color: #333333;
   padding: 5px;
+  width: 300px;
 }
 
 .modal-form .modal-form-itself form textarea {
@@ -888,10 +892,72 @@ a:hover {
   overflow: scroll;
 }
 
-.modal-form .modal-form-itself form .description {
+.modal-form .modal-form-itself form .modal-file {
+  position: relative;
+  width: 305px;
+}
+
+.modal-form .modal-form-itself form .modal-file label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 195px;
+  height: 100%;
+  background: #ffffff;
   font-family: "Ubuntu";
   font-size: 18px;
   line-height: 180%;
   color: #333333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal-form .modal-form-itself form .modal-file label:after {
+  text-align: center;
+  content: "Выберите файл";
+  top: 0;
+  left: -115px;
+  width: 115px;
+  height: 100%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #E5C577;
+  cursor: pointer;
+  visibility: visible;
+  position: absolute;
+  font-family: "Ubuntu";
+  font-size: 14px;
+  line-height: 180%;
+  border-radius: 5px;
+}
+
+.modal-form .modal-form-itself .description {
+  font-family: "Ubuntu";
+  font-size: 18px;
+  line-height: 180%;
+  color: #333333;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  margin: 50px auto;
+}
+
+.modal-form .modal-form-itself .hide {
+  opacity: 0;
+  visibility: hidden;
 }
 /*# sourceMappingURL=style.css.map */

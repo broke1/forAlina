@@ -689,7 +689,7 @@ a
 
     .modal-form-itself
         width: 600px
-        height: 500px
+        height: auto
         border-radius: 5px
         background: #ffffff
         padding: 30px
@@ -715,6 +715,7 @@ a
             flex-flow: column nowrap
             justify-content: flex-start
             position: relative
+            transition: $transition
 
             .form-item
                 margin: 10px 0
@@ -725,6 +726,7 @@ a
                 line-height: 180%
                 color: #333333
                 padding: 5px
+                width: 300px
 
             textarea
                 border-radius: 5px
@@ -741,11 +743,59 @@ a
             .button-send-modal
                 @extend %button-send
             
-            .description
+
+            .modal-file
+                position: relative
+                width: 305px
+
+                label
+                    position: absolute
+                    top: 0
+                    right: 0
+                    width: 195px
+                    height: 100%
+                    background: #ffffff
+                    font-family: "Ubuntu"
+                    font-size: 18px
+                    line-height: 180%
+                    color: #333333  
+                    display: flex
+                    align-items: center
+                    justify-content: center
+ 
+
+                    &:after 
+                        text-align: center
+                        content: "Выберите файл"
+                        top: 0
+                        left: -115px
+                        width: 115px
+                        height: 100%
+                        color: white 
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        background-color: $gold
+                        cursor: pointer
+                        visibility: visible
+                        position: absolute
+                        font-family: "Ubuntu"
+                        font-size: 14px
+                        line-height: 180%
+                        border-radius: 5px
+
+        .description
                 font-family: "Ubuntu"
                 font-size: 18px
                 line-height: 180%
                 color: #333333
+                transition: $transition
+                margin: 50px auto
+
+        .hide 
+                opacity: 0
+                visibility: hidden
+        
             
 
 
