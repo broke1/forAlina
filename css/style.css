@@ -39,7 +39,7 @@
   color: #FFFFFF;
 }
 
-.modal-form .modal-form-itself form .button-send-modal {
+.otzivi .btn-send_otziv, .modal-form .modal-form-itself form .button-send-modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,7 +70,7 @@
   transition: all 0.4s ease;
 }
 
-.modal-form .modal-form-itself form .button-send-modal:hover {
+.otzivi .btn-send_otziv:hover, .modal-form .modal-form-itself form .button-send-modal:hover {
   background: linear-gradient(89.25deg, #FAF5AD 0.15%, #AE844D 107.92%);
 }
 
@@ -809,6 +809,10 @@ a:hover {
   width: 550px;
 }
 
+.otzivi .btn-send_otziv {
+  margin-top: 100px;
+}
+
 .modal-form {
   position: fixed;
   top: 0;
@@ -816,6 +820,10 @@ a:hover {
   width: 100%;
   height: 100%;
   z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .modal-form .shadow-back {
@@ -830,6 +838,7 @@ a:hover {
 .modal-form .modal-form-itself {
   width: 600px;
   height: auto;
+  min-height: 60px;
   border-radius: 5px;
   background: #ffffff;
   padding: 30px;
@@ -864,6 +873,7 @@ a:hover {
   position: relative;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  height: auto;
 }
 
 .modal-form .modal-form-itself form .form-item {
@@ -947,8 +957,9 @@ a:hover {
 }
 
 .modal-form .modal-form-itself .description {
-  font-family: "Ubuntu";
-  font-size: 18px;
+  font-family: "Open_Sans";
+  font-size: 25px;
+  text-align: center;
   line-height: 180%;
   color: #333333;
   -webkit-transition: all 0.4s ease;
@@ -959,5 +970,7 @@ a:hover {
 .modal-form .modal-form-itself .hide {
   opacity: 0;
   visibility: hidden;
+  margin: 0;
+  height: 0 !important;
 }
 /*# sourceMappingURL=style.css.map */

@@ -27,6 +27,7 @@ window.addEventListener('DOMContentLoaded', function() {
   
 
     $(".phone-form").mask("+7 (999) 999-99-99");
+    $(".phone-form-modal").mask("+7 (999) 999-99-99");
 
     lightbox.option({
         'wrapAround': true,
@@ -218,7 +219,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         <div class="close-btn">X</div>
                         <input type="hidden" name="name_form" v-bind:value="settings.hidden" class="form-item">
                         <input type="text" name="name" placeholder="Ваше имя" class="form-item">
-                        <input type="text" name="phone" class="phone-form form-item"  placeholder="+7 (___) ___-__-__ " >
+                        <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="+7 (___) ___-__-__ " >
                         <textarea rows="7" cols="42" v-if="settings.textarea"   name="otziv" class="form-item" placeholder="Ваш отзыв"></textarea>
                         <div class="form-group modal-file form-item" v-if="settings.file"  >
                             <label for="modal__file" class="textover">Файл не загружен</label>
@@ -243,7 +244,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     textarea: true,
                     file: true,
                     button: "otzivi-btn"
-
+                    
                     
                   },
             }
@@ -260,12 +261,31 @@ window.addEventListener('DOMContentLoaded', function() {
             
        });
 
+       document.querySelector('.btn-send_otziv').addEventListener('click', () => {
+            document.querySelector('.modal-form form').reset();
+            document.querySelector('.modal-form .description').classList.add('hide');
+            document.querySelector('.modal-form form').classList.remove('hide');
+            document.querySelector('.modal-form').style.visibility = "visible";
+            document.querySelector('.modal-form').style.opacity = "1";
+       });
 
+       
+       document.querySelector('.modal-form .close-btn').addEventListener('click', () => { 
+                document.querySelector('.modal-form').style.opacity = "0";
+                document.querySelector('.modal-form').style.visibility = "hidden";
+       });
+       
+       document.querySelector('.modal-form .shadow-back').addEventListener('click', () => { 
+              document.querySelector('.modal-form').style.opacity = "0";
+              document.querySelector('.modal-form').style.visibility = "hidden";
+        });
 
 
        document.querySelector('.modal-form .button-send-modal').addEventListener('click', () => {
            
-             
+                  let form_modal = document.querySelector('.modal-form form');
+                  let form_height = form_modal.getBoundingClientRect().height;
+                  form_modal.style.height = form_height + 'px';
                   sendModal(document.forms.modal);
 
               });
@@ -279,7 +299,7 @@ window.addEventListener('DOMContentLoaded', function() {
                    
                     var formData = new FormData(form);
 
-                    
+
 
                     // добавить к пересылке ещё пару ключ - значение
                     //formData.append("name", "Fred");
@@ -294,13 +314,29 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     if (this.status != 200) {
                     console.log( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+
+                    
+                    
+
+
+                    document.querySelector('.modal-form .description').classList.remove('hide');
+                    document.querySelector('.modal-form form').classList.add('hide');
+                    setTimeout(()=>{
+                        document.querySelector('.modal-form').style.opacity = "0";
+                        document.querySelector('.modal-form').style.visibility = "hidden";
+                    }, 800);
+
+
                     return;
                     } else {
                       console.log(this.responseText);
+
+                      document.querySelector('.modal-form .description').classList.remove('hide');
                       document.querySelector('.modal-form form').classList.add('hide');
-                      setTimeout(() =>{
-                        document.querySelector('.modal-form .description').classList.remove('hide');
-                      }, 300);
+                      setTimeout(()=>{
+                          document.querySelector('.modal-form').style.opacity = "0";
+                          document.querySelector('.modal-form').style.visibility = "hidden";
+                      }, 800);
 
                     }
 
