@@ -27,7 +27,20 @@ window.addEventListener('DOMContentLoaded', function() {
   
 
     $(".phone-form").mask("+7 (999) 999-99-99");
-    $(".phone-form-modal").mask("+7 (999) 999-99-99");
+
+    // let timer = setInterval(function(){
+    //   console.log('stop');
+    //     if (document.querySelector('.phone-form-modal') != 'null') {
+    //       clearInterval(timer);
+    //       $(".phone-form-modal").mask("+7 (999) 999-99-99");
+    //     }
+    // }, 100);
+
+    // setTimeout(function(){
+    //   clearInterval(timer);
+    // }, 5000);
+   
+   
 
     lightbox.option({
         'wrapAround': true,
@@ -217,6 +230,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 <div class="modal-form-itself">
                     <form action="/send/send.php" name="modal">
                         <div class="close-btn">X</div>
+                        <p class="zagolovok-form">{{settings.zagolovok}}</p>
                         <input type="hidden" name="name_form" v-bind:value="settings.hidden" class="form-item">
                         <input type="text" name="name" placeholder="Ваше имя" class="form-item">
                         <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="+7 (___) ___-__-__ " >
@@ -226,7 +240,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             <input type="file" id="modal__file" name="file"   value=""></input>
                         </div>
                         
-                        <div :data-button = "settings.button" class="button-send-modal  form-item" >Отправить</div>
+                        <div  class="button-send-modal  form-item" >Отправить</div>
                     </form>
                     <div class="description hide">{{settings.description}}</div>
                 </div>
@@ -239,15 +253,16 @@ window.addEventListener('DOMContentLoaded', function() {
             data: {
               settings: 
                   { 
+                    zagolovok: "Оставьте свой отзыв и скоро он появится на сайте",
                     description: 'Ваш отзыв отправлен',
                     hidden : 'otzivi',
                     textarea: true,
-                    file: true,
-                    button: "otzivi-btn"
-                    
-                    
+                    file: true
                   },
-            }
+            },
+              mounted: function () {
+                $(".phone-form-modal").mask("+7 (999) 999-99-99");
+              }
         })
 
 
@@ -262,12 +277,37 @@ window.addEventListener('DOMContentLoaded', function() {
        });
 
        document.querySelector('.btn-send_otziv').addEventListener('click', () => {
-            document.querySelector('.modal-form form').reset();
-            document.querySelector('.modal-form .description').classList.add('hide');
-            document.querySelector('.modal-form form').classList.remove('hide');
-            document.querySelector('.modal-form').style.visibility = "visible";
-            document.querySelector('.modal-form').style.opacity = "1";
+        let new_form  = {
+          zagolovok: "Оставьте свой отзыв и скоро он появится на сайте",
+          description: 'Ваш отзыв отправлен',
+          hidden : 'otzivi',
+          textarea: true,
+          file: true
+         }; 
+       
+        showModalForm(new_form);
        });
+
+       document.querySelector('.btn-send_consult').addEventListener('click', () => {
+
+         let new_form  = {
+          zagolovok: "Оставьте свои контактные данные и мы Вам перезвоним",
+          description: 'Заявка отправлена',
+          hidden : 'consult',
+          textarea: false,
+          file: false
+        };
+        showModalForm(new_form);
+       });
+
+       function showModalForm(new_form){
+        modal_form.settings = new_form;
+        document.querySelector('.modal-form form').reset();
+        document.querySelector('.modal-form .description').classList.add('hide');
+        document.querySelector('.modal-form form').classList.remove('hide');
+        document.querySelector('.modal-form').style.visibility = "visible";
+        document.querySelector('.modal-form').style.opacity = "1";
+       }
 
        
        document.querySelector('.modal-form .close-btn').addEventListener('click', () => { 

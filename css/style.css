@@ -19,7 +19,7 @@
   src: url("../fonts/Open_Sans/OpenSans.ttf");
 }
 
-.header .container, .header-contacts, .header-contacts .time-work, .header-contacts .time-work .time-itself, .header-contacts .contacts-itself, .header-contacts .contacts-itself .phone-contacts, .header-contacts .contacts-itself .adress-contacts, .menu .menu-itself, .hello-1-with-img, .common .container, .section-zagolovok, .galery .galery-block, .video .video-slider .slider-for .video-item, .video .video-slider .slider-nav .video-item, .otzivi .otzivi-slider .otziv-item .otziv-container, .modal-form .modal-form-itself form {
+.header .container, .header-contacts, .header-contacts .time-work, .header-contacts .time-work .time-itself, .header-contacts .contacts-itself, .header-contacts .contacts-itself .phone-contacts, .header-contacts .contacts-itself .adress-contacts, .menu .menu-itself, .hello-1-with-img, .common .container, .section-zagolovok, .galery .galery-block, .video .video-slider .slider-for .video-item, .video .video-slider .slider-nav .video-item, .otzivi .otzivi-slider .otziv-item .otziv-container, .modal-form .modal-form-itself form, .consult .container, .consult .container .consult-opisanie, .consult .container .consult-img-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,7 +39,7 @@
   color: #FFFFFF;
 }
 
-.otzivi .btn-send_otziv, .modal-form .modal-form-itself form .button-send-modal {
+.otzivi .btn-send_otziv, .modal-form .modal-form-itself form .button-send-modal, .consult .container .consult-img-block .btn-send_consult {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,13 +70,17 @@
   transition: all 0.4s ease;
 }
 
-.otzivi .btn-send_otziv:hover, .modal-form .modal-form-itself form .button-send-modal:hover {
+.otzivi .btn-send_otziv:hover, .modal-form .modal-form-itself form .button-send-modal:hover, .consult .container .consult-img-block .btn-send_consult:hover {
   background: linear-gradient(89.25deg, #FAF5AD 0.15%, #AE844D 107.92%);
 }
 
 body, p, h2, h3 {
   padding: 0;
   margin: 0;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {
@@ -842,6 +846,7 @@ a:hover {
   border-radius: 5px;
   background: #ffffff;
   padding: 30px;
+  padding-top: 40px;
   position: absolute;
   top: 20%;
   left: 50%;
@@ -857,8 +862,8 @@ a:hover {
   width: 20px;
   height: 20px;
   border-radius: 50px;
-  border: 3px solid #E5C577;
-  padding: 4px 0 3px 8px;
+  border: 3px solid #DCC18A;
+  padding: 5px 0 3px 9px;
   cursor: pointer;
 }
 
@@ -874,6 +879,26 @@ a:hover {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   height: auto;
+  border: 1px solid #DCC18A;
+  position: relative;
+  padding: 10px;
+  padding-top: 40px;
+}
+
+.modal-form .modal-form-itself form .zagolovok-form {
+  font-family: "Open_Sans";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: #000000;
+  background-color: #ffffff;
+  width: 60%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .modal-form .modal-form-itself form .form-item {
@@ -946,7 +971,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #E5C577;
+  background-color: #DCC18A;
   cursor: pointer;
   visibility: visible;
   position: absolute;
@@ -972,5 +997,64 @@ a:hover {
   visibility: hidden;
   margin: 0;
   height: 0 !important;
+  padding: 0;
+}
+
+.consult {
+  background: #000000;
+  color: #ffffff;
+}
+
+.consult .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.consult .container .consult-opisanie {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.consult .container .consult-opisanie p:nth-child(1) {
+  font-family: "Open_Sans";
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 140%;
+  margin-bottom: 30px;
+}
+
+.consult .container .consult-opisanie p:nth-child(2) {
+  font-family: "Ubuntu";
+  font-size: 20px;
+  line-height: 180%;
+  margin-bottom: 50px;
+}
+
+.consult .container .consult-opisanie p:nth-child(3) {
+  font-family: "Ubuntu";
+  font-size: 20px;
+  line-height: 180%;
+}
+
+.consult .container .consult-img-block {
+  width: 480px;
+  min-width: 480px;
+  height: 500px;
+  background-image: url("../img/consult.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
