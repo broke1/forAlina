@@ -181,6 +181,157 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     })
 
+
+
+  Vue.component('our-team', {
+    props: ['teams'],
+    template: `
+        <div class="our-teams">   
+            <p v-if="teams.seen_zagolovok" class="team-zagolovok" :class="teams.pos_zagolovok">{{teams.zagolovok}}</p>
+            <div  class="team-block">
+                <div v-if="teams.team_block1" class="team-itself">
+                    <div class="team-img">
+                        <img :src="teams.img1">
+                    </div>
+                    <p class="team-name">{{teams.name1}}</p>
+                    <p class="team-text">{{teams.text1}}</p>
+                </div>
+                <div v-if="teams.team_block2" class="team-itself">
+                    <div class="team-img">
+                        <img :src="teams.img2">
+                    </div>
+                    <p class="team-name">{{teams.name2}}</p>
+                    <p class="team-text">{{teams.text2}}</p>
+                </div>
+                <div v-if="teams.team_block3" class="team-itself">
+                    <div class="team-img">
+                        <img :src="teams.img3">
+                    </div>
+                    <p class="team-name">{{teams.name3}}</p>
+                    <p class="team-text">{{teams.text3}}</p>
+                </div>
+            </div>
+        </div>
+    `
+  })
+
+  new Vue({
+    el: '.team',
+    data: {
+        name: "Наша команда",
+        teams: [
+          {
+            "seen_zagolovok": true,
+            "zagolovok": "Hair Art стилисты",
+            "team_block1": true,
+            "team_block2": true,
+            "team_block3": true,
+            "img1": "img/team/img1.png",
+            "img2": "img/team/img1.png",
+            "img3": "img/team/img1.png",
+            "name1": "Александра",
+            "name2": "Александра",
+            "name3": "Александра",
+            "text1": "Описание, опыт, курсы по повышению квалификации.",
+            "text2": "Описание, опыт, курсы по повышению квалификации.",
+            "text3": "Описание, опыт, курсы по повышению квалификации.",
+            "pos_zagolovok" : "center"
+          },
+          {
+            "seen_zagolovok": true,
+            "zagolovok": "Nail Art мастера",
+            "team_block1": true,
+            "team_block2": true,
+            "team_block3": true,
+            "img1": "img/team/img1.png",
+            "img2": "img/team/img1.png",
+            "img3": "img/team/img1.png",
+            "name1": "Александра",
+            "name2": "Александра",
+            "name3": "Александра",
+            "text1": "Описание, опыт, курсы по повышению квалификации.",
+            "text2": "Описание, опыт, курсы по повышению квалификации.",
+            "text3": "Описание, опыт, курсы по повышению квалификации.",
+            "pos_zagolovok" : "center"
+          },
+          {
+            "seen_zagolovok": true,
+            "zagolovok": "Администраторы",
+            "team_block1": true,
+            "team_block2": true,
+            "team_block3": true,
+            "img1": "img/team/img1.png",
+            "img2": "img/team/img2.jpg",
+            "img3": "img/team/img1.png",
+            "name1": "Александра",
+            "name2": "Алёна",
+            "name3": "Александра",
+            "text1": "Описание, опыт, курсы по повышению квалификации.",
+            "text2": "Описание, опыт, курсы по повышению квалификации.",
+            "text3": "Описание, опыт, курсы по повышению квалификации.",
+            "pos_zagolovok" : "right_with_before"
+          },
+          {
+            "seen_zagolovok": false,
+            "zagolovok": "Nail Art мастера",
+            "team_block1": true,
+            "team_block2": true,
+            "team_block3": true,
+            "img1": "img/team/img1.png",
+            "img2": "img/team/img1.png",
+            "img3": "img/team/img3.jpg",
+            "name1": "Александра",
+            "name2": "Александра",
+            "name3": "Алина Друговейко",
+            "text1": "Описание, опыт, курсы по повышению квалификации.",
+            "text2": "Описание, опыт, курсы по повышению квалификации.",
+            "text3": "Заместитель директора студии красоты Art Me Master.",
+            "pos_zagolovok" : "center"
+          },
+        ]
+    }
+})
+
+
+
+Vue.component('contacts-itself', {
+  props: ['contacts'],
+  template: `
+      <div class="contacts-text">
+          <img :src="contacts.img">
+          <p>{{contacts.text}}</p>
+      </div>   
+  `
+})
+
+Vue.component('social-itself', {
+  props: ['socials'],
+  template: `
+      <a :href="socials.link"><img :src="socials.img"></a>
+  `
+})
+
+new Vue({
+  el: '.contacts',
+  data: {
+      name: "Контакты",
+      contacts: [
+        {"img": "img/map.png", "text":"Москва, ул. Скобелевская д.12 (м. Скобелевская)"},
+        {"img": "img/phone-icon.png", "text":"+7 (977) 678-08-83"},
+        {"img": "img/email.png", "text":"artmemaster@yandex.ru"},
+      ],
+      socials: [
+        {"img": "img/socials/vk.png", "link":"https://vk.com/"},
+        {"img": "img/socials/instagram.png", "link":"https://vk.com/"},
+        {"img": "img/socials/twitter.png", "link":"https://vk.com/"},
+        {"img": "img/socials/facebook.png", "link":"https://vk.com/"},
+      ]
+  },
+})
+
+
+
+
     $('.otzivi-slider').slick({
 
     });

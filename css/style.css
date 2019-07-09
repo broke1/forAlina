@@ -19,7 +19,7 @@
   src: url("../fonts/Open_Sans/OpenSans.ttf");
 }
 
-.header .container, .header-contacts, .header-contacts .time-work, .header-contacts .time-work .time-itself, .header-contacts .contacts-itself, .header-contacts .contacts-itself .phone-contacts, .header-contacts .contacts-itself .adress-contacts, .menu .menu-itself, .hello-1-with-img, .common .container, .section-zagolovok, .galery .galery-block, .video .video-slider .slider-for .video-item, .video .video-slider .slider-nav .video-item, .otzivi .otzivi-slider .otziv-item .otziv-container, .modal-form .modal-form-itself form, .consult .container, .consult .container .consult-opisanie, .consult .container .consult-img-block {
+.header .container, .header-contacts, .header-contacts .time-work, .header-contacts .time-work .time-itself, .header-contacts .contacts-itself, .header-contacts .contacts-itself .phone-contacts, .header-contacts .contacts-itself .adress-contacts, .menu .menu-itself, .hello-1-with-img, .common .container, .section-zagolovok, .galery .galery-block, .video .video-slider .slider-for .video-item, .video .video-slider .slider-nav .video-item, .otzivi .otzivi-slider .otziv-item .otziv-container, .modal-form .modal-form-itself form, .consult .container, .consult .container .consult-opisanie, .consult .container .consult-img-block, .team .our-teams .team-block, .team .our-teams .team-block .team-itself, .contacts .contacts-block, .contacts .contacts-block .contacts-itself-block, .contacts .contacts-block .contacts-itself-block .contacts-itself, .contacts .contacts-block .contacts-itself-block .contacts-itself .contacts-text, .contacts .contacts-block .contacts-itself-block .contacts-social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -580,7 +580,7 @@ a:hover {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 85px;
+  width: 70%;
   height: 6px;
   background-color: #DCC18A;
 }
@@ -1056,5 +1056,169 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.team {
+  padding: 125px 0 40px 0;
+  background: #F9F8F4;
+}
+
+.team .our-teams {
+  margin-bottom: 60px;
+  border-bottom: 1px solid #DCC18A;
+  color: #333333;
+}
+
+.team .our-teams .team-zagolovok {
+  font-family: "Open_Sans";
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 140%;
+  position: relative;
+}
+
+.team .our-teams .center {
+  text-align: center;
+}
+
+.team .our-teams .right_with_before {
+  right: 200px;
+  text-align: right;
+}
+
+.team .our-teams .right_with_before:before {
+  content: "Бровист";
+  font-family: "Open_Sans";
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 120%;
+  position: absolute;
+  top: 0;
+  left: 280px;
+}
+
+.team .our-teams .team-block {
+  padding: 40px 0 30px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.team .our-teams .team-block .team-itself {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 280px;
+}
+
+.team .our-teams .team-block .team-itself .team-img {
+  width: 280px;
+  height: 300px;
+}
+
+.team .our-teams .team-block .team-itself .team-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.team .our-teams .team-block .team-itself .team-name {
+  font-family: "Open_Sans";
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 120%;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.team .our-teams .team-block .team-itself .team-text {
+  text-align: center;
+  font-family: "Ubuntu";
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.contacts {
+  padding: 100px 0;
+}
+
+.contacts .contacts-block {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contacts .contacts-block .contacts-itself-block {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contacts .contacts-block .contacts-itself-block .contacts-itself {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.contacts .contacts-block .contacts-itself-block .contacts-itself .contacts-text {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.contacts .contacts-block .contacts-itself-block .contacts-itself .contacts-text img {
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.contacts .contacts-block .contacts-itself-block .contacts-social {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.contacts .contacts-block .contacts-itself-block .contacts-social a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.contacts .contacts-block .contacts-itself-block .contacts-social a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+}
+
+.contacts .contacts-block .contacts-itself-block .contacts-social a img {
+  width: 37px;
+  height: 37px;
+}
+
+.contacts .contacts-map {
+  width: 560px;
+  height: 340px;
 }
 /*# sourceMappingURL=style.css.map */
