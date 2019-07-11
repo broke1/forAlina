@@ -366,7 +366,7 @@ a
         justify-content: flex-start
 
         .common-text
-            max-width: 500px
+            max-width: 600px
 
             h2
                 font-family: "Montserrat"
@@ -1010,7 +1010,80 @@ a
         height: 340px   
 
 
+.vacansy
+    padding: 100px 0 80px 0
 
+    .vacansy-block
+        @extend %flex
+        justify-content: space-between
+        align-items: flex-start
+
+        .vacansy-left
+            @extend %flex
+            flex-flow: column nowrap
+            align-items: flex-start
+            justify-content: flex-start
+
+            .vacansy-link
+                text-decoration: none
+                color: #000000
+                cursor: pointer
+                margin-bottom: 20px
+                padding: 10px 0
+                @extend %flex
+                justify-content: flex-start
+                transition: $transition 0.6s
+                transform: translateY(50px)
+                opacity: 0
+
+
+                p
+                    margin: 0
+                    padding: 0
+                    width: 20px
+                    height: 20px
+                    margin-right: 20px
+                    @extend %flex
+                    justify-content: flex-start
+
+                    img
+                        width: 100%
+                        height: auto
+            .show-up
+                transform: translateY(0px)
+                opacity: 1
+
+        .vacansy-right
+            @extend %flex
+            flex-flow: column nowrap
+            align-items: flex-start
+            justify-content: center
+            max-width: 600px
+
+            .phone-p
+                font-family: "Ubuntu"
+                font-weight: bold
+                font-size: 20px
+                line-height: 180%
+                color: #333333
+                margin-bottom: 50px
+
+                a
+                    display: inline-block
+                    text-decoration: none
+                    color: #000000
+                    cursor: pointer
+
+            .form-p
+                font-family: "Ubuntu"
+                font-weight: bold
+                font-size: 20px
+                line-height: 180%
+                color: #333333
+
+                .btn-send_vacansy
+                    @extend %button-send
+                    margin-top: 30px
 
          
 

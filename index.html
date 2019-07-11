@@ -216,10 +216,41 @@
             
         </div>
     </section>
-
-
-
-
+    <section class="common">
+        <div class="container">
+            <div class="common-text">
+                <h2>Хотите записаться к нашим мастерам? Оставьте номер телефона, и мы с вами свяжемся.</h2>
+            </div>
+            <div class="common-form common-form-two">
+                <form action="/send/send.php" name="common_two">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                    <input type="text" name="phone" class="phone-form"  placeholder="+7 (___) ___-__-__ ">
+                    <div class="button-send button-send-common-two common-send">Отправить</div>
+                </form>
+                <div class="description hide">Мы скоро Вам позвоним</div>
+            </div>
+        </div>
+    </section>
+    <section class="vacansy">
+        <div class="container">
+            <div class="section-zagolovok">   
+                <h2>{{name}}</h2>
+            </div>
+            <div class="vacansy-block">
+                <div class="vacansy-left">
+                    <a :href="vacansy.url" class="vacansy-link" target="_blank" v-for="vacansy in vacansys"><p><img src="img/arrow-vacansy.png"></p>{{vacansy.name}}</a>
+                </div>
+                <div class="vacansy-right">
+                    <div class="phone-p">Для более подробной информации о вакансиях
+                        звоните на номер: <a href="tel:+79776780883">+7 (977) 678-08-83</a></div>
+                    <div class="form-p">
+                        <p> Или оставьте ваши контакты, и мы с вами свяжемся: </p>
+                        <div class="btn-send_vacansy">Записаться</div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
 </body>
 </html>
 

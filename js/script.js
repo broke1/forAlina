@@ -1,6 +1,6 @@
 'use strict'
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
 
 
     new Vue({
@@ -91,6 +91,8 @@ window.addEventListener('DOMContentLoaded', function() {
       }, 500);
 
       
+     let vacansy_links = [];
+     let vacansy_array = [];
      
 
 
@@ -107,12 +109,28 @@ window.addEventListener('DOMContentLoaded', function() {
                 }
             });  
 
+            vacansy_links.forEach(function(item,i) {
+              if ((current_scroll+ screen.height) > vacansy_array[i]) {
+                  item.classList.add('show-up');  
+              }
+            });  
+
         } else { 
+
+
             all_offers.forEach(function(item,i) {
                 if ((current_scroll+ screen.height) < array_bottom_offer[i]) {
                     item.classList.remove('show-offer');  
                 }
             });   
+
+            vacansy_links.forEach(function(item,i) {
+              if ((current_scroll+ screen.height) < vacansy_array[i]) {
+                  item.classList.remove('show-up');  
+              }
+            });  
+
+
           
         }
      
@@ -145,16 +163,46 @@ window.addEventListener('DOMContentLoaded', function() {
     } else {
         document.querySelector('.common-form form').classList.add('hide');
         setTimeout(() =>{
-          document.querySelector('.description').classList.remove('hide');
+          document.querySelector('.common-form .description').classList.remove('hide');
         }, 300);
 
     }
 
   }
 
-
-
       });
+
+      document.querySelector('.button-send-common-two').addEventListener('click', () => {
+           
+                    // создать объект для формы
+            var formData = new FormData(document.forms.common_two);
+
+            // добавить к пересылке ещё пару ключ - значение
+            //formData.append("name", "Fred");
+
+
+            // отослать
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/send/send.php");
+            xhr.send(formData);
+
+            xhr.onreadystatechange = function() {
+            if (this.readyState != 4) return;
+
+            if (this.status != 200) {
+            console.log( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+            return;
+            } else {
+              document.querySelector('.common-form form').classList.add('hide');
+              setTimeout(() =>{
+                document.querySelector('.description').classList.remove('hide');
+              }, 300);
+
+            }
+
+            }
+
+            });
 
       
         
@@ -385,7 +433,7 @@ new Vue({
                         <input type="hidden" name="name_form" v-bind:value="settings.hidden" class="form-item">
                         <input type="text" name="name" placeholder="Ваше имя" class="form-item">
                         <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="+7 (___) ___-__-__ " >
-                        <textarea rows="7" cols="42" v-if="settings.textarea"   name="otziv" class="form-item" placeholder="Ваш отзыв"></textarea>
+                        <textarea rows="7" cols="42" v-if="settings.textarea"   name="otziv" class="form-item" :placeholder="settings.textarea_placeholder"></textarea>
                         <div class="form-group modal-file form-item" v-if="settings.file"  >
                             <label for="modal__file" class="textover">Файл не загружен</label>
                             <input type="file" id="modal__file" name="file"   value=""></input>
@@ -408,6 +456,7 @@ new Vue({
                     description: 'Ваш отзыв отправлен',
                     hidden : 'otzivi',
                     textarea: true,
+                    textarea_placeholder: "Ваш отзыв",
                     file: true
                   },
             },
@@ -415,6 +464,35 @@ new Vue({
                 $(".phone-form-modal").mask("+7 (999) 999-99-99");
               }
         })
+
+
+
+
+
+      new Vue({
+          el: '.vacansy',
+          data: {
+            name: "Вакансии",
+            vacansys: [
+               {"url" : "#", "name": "Менеджер по подбору лака для ногтей"},
+               {"url" : "#", "name": "Администратор"},
+               {"url" : "#", "name": "Парикмахер-универсал"},
+               {"url" : "#", "name": "Менеджер по подбору лака для ногтей"},
+               {"url" : "#", "name": "Администратор"},
+               {"url" : "#", "name": "Парикмахер-универсал"},
+            ]
+          },
+          mounted: function () {
+            vacansy_links = document.querySelectorAll('.vacansy-link');
+           
+            vacansy_links.forEach(function(item) {
+              vacansy_array.push(item.getBoundingClientRect().bottom);
+            });
+           
+          }
+      })
+
+        
 
 
        document.querySelector('input[type=file]').addEventListener('change', ()=>{
@@ -433,6 +511,7 @@ new Vue({
           description: 'Ваш отзыв отправлен',
           hidden : 'otzivi',
           textarea: true,
+          textarea_placeholder: "Ваш отзыв",
           file: true
          }; 
        
@@ -446,10 +525,24 @@ new Vue({
           description: 'Заявка отправлена',
           hidden : 'consult',
           textarea: false,
+          textarea_placeholder: "Название вакансии",
           file: false
         };
         showModalForm(new_form);
        });
+
+       document.querySelector('.btn-send_vacansy').addEventListener('click', () => {
+
+        let new_form  = {
+         zagolovok: "Оставьте свои контактные данные и мы Вам перезвоним",
+         description: 'Контакты отправлена',
+         hidden : 'vacansy',
+         textarea_placeholder: "Название вакансии",
+         textarea: true,
+         file: false
+       };
+       showModalForm(new_form);
+      });
 
        function showModalForm(new_form){
         modal_form.settings = new_form;
@@ -535,7 +628,7 @@ new Vue({
               }
       
  
-
+            
 
 });
 
