@@ -61,6 +61,7 @@ window.addEventListener('load', function() {
             <div class="offer-item">   
                 <h3>{{offers.zagolovok}}</h3>
                 <p>{{offers.text}}</p>
+                <img :src="offers.img" v-if="offers.seen_img">
             </div>
         `
       })
@@ -69,12 +70,24 @@ window.addEventListener('load', function() {
           el: '.offer',
           data: {
             offers: [
-                { zagolovok: 'Hair Art Zone', text: 'Сложное окрашивание, шатуш/балаяж/омбре, брондирование, блондирование, тонирование, мелирование. Стрижки, укладки, прически, косы и многое другое. Также у нас есть потрясающие процедуры, которые помогут достичь невероятных эффектов, не просто покоряя внешним видом волос, но и с восстановительным эффектом.'},
-                { zagolovok: 'Nail мастера', text: 'Маникюр, педикюр, покрытие, дизайн, наращивание — легко! Так же мы можем  предложить преображение и релаксацию вашим ручкам и ножкам при помощи разнообразных процедур и  массажа.'},
-                { zagolovok: 'Лашмейкер', text: 'Специалист по наращиванию ресничек. Хотите взгляд кошки, просто немного увеличить объем или длинну, тогда Вам к нам! Вы получите эффектный и натуральный результат.'},
-                { zagolovok: 'Прочие услуги', text: 'Архитектура, ламинирование, окрашивание бровей и ресниц, вечерние и свадебные образы (прическа и макияж), мужские стрижки.'},
+                { seen_img: true, img: "img/offer/hair.png",zagolovok: 'Hair Art Zone', text: 'Сложное окрашивание, шатуш/балаяж/омбре, брондирование, блондирование, тонирование, мелирование. Стрижки, укладки, прически, косы и многое другое. Также у нас есть потрясающие процедуры, которые помогут достичь невероятных эффектов, не просто покоряя внешним видом волос, но и с восстановительным эффектом.'},
+                { seen_img: true,img: "img/offer/nail.png",zagolovok: 'Nail мастера', text: 'Маникюр, педикюр, покрытие, дизайн, наращивание — легко! Так же мы можем  предложить преображение и релаксацию вашим ручкам и ножкам при помощи разнообразных процедур и  массажа.'},
+                { seen_img: true,img: "img/offer/eye.png",zagolovok: 'Лашмейкер', text: 'Специалист по наращиванию ресничек. Хотите взгляд кошки, просто немного увеличить объем или длинну, тогда Вам к нам! Вы получите эффектный и натуральный результат.'},
+                { seen_img: false,img: "img/offer/hair.png",zagolovok: 'Прочие услуги', text: 'Архитектура, ламинирование, окрашивание бровей и ресниц, вечерние и свадебные образы (прическа и макияж), мужские стрижки.'},
             ],
           }
+      })
+
+      new Vue({
+        el: ".footer",
+        data: {
+          socials: [
+            {url : "#",img: "img/footer/vk.png"},
+            {url : "#",img: "img/footer/instagram.png"},
+            {url : "#",img: "img/footer/twitter.png"},
+            {url : "#",img: "img/footer/facebook.png"},
+          ]
+        }
       })
 
 
@@ -93,6 +106,12 @@ window.addEventListener('load', function() {
       
      let vacansy_links = [];
      let vacansy_array = [];
+
+     let teams = [];
+     let teams_array = [];
+
+
+    // team-show-block
      
 
 
@@ -115,6 +134,20 @@ window.addEventListener('load', function() {
               }
             });  
 
+        
+            
+            teams = document.querySelectorAll('.team-itself');
+
+
+
+            teams.forEach(function(item,i) {
+              if ((item.getBoundingClientRect().bottom - screen.height + 200) < 0) {
+                  item.classList.add('team-show-block'); 
+              }
+           });  
+
+           
+
         } else { 
 
 
@@ -129,6 +162,15 @@ window.addEventListener('load', function() {
                   item.classList.remove('show-up');  
               }
             });  
+
+            teams = document.querySelectorAll('.team-itself');
+
+            teams.forEach(function(item,i) {
+              if ((item.getBoundingClientRect().bottom - screen.height + 200) > 0) {
+                  item.classList.remove('team-show-block'); 
+              }
+           }); 
+ 
 
 
           

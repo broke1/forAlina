@@ -19,7 +19,7 @@
   src: url("../fonts/Open_Sans/OpenSans.ttf");
 }
 
-.header .container, .header-contacts, .header-contacts .time-work, .header-contacts .time-work .time-itself, .header-contacts .contacts-itself, .header-contacts .contacts-itself .phone-contacts, .header-contacts .contacts-itself .adress-contacts, .menu .menu-itself, .hello-1-with-img, .common .container, .section-zagolovok, .galery .galery-block, .video .video-slider .slider-for .video-item, .video .video-slider .slider-nav .video-item, .otzivi .otzivi-slider .otziv-item .otziv-container, .modal-form .modal-form-itself form, .consult .container, .consult .container .consult-opisanie, .consult .container .consult-img-block, .team .our-teams .team-block, .team .our-teams .team-block .team-itself, .contacts .contacts-block, .contacts .contacts-block .contacts-itself-block, .contacts .contacts-block .contacts-itself-block .contacts-itself, .contacts .contacts-block .contacts-itself-block .contacts-itself .contacts-text, .contacts .contacts-block .contacts-itself-block .contacts-social, .vacansy .vacansy-block, .vacansy .vacansy-block .vacansy-left, .vacansy .vacansy-block .vacansy-left .vacansy-link, .vacansy .vacansy-block .vacansy-left .vacansy-link p, .vacansy .vacansy-block .vacansy-right {
+.header .container, .header-contacts, .header-contacts .time-work, .header-contacts .time-work .time-itself, .header-contacts .contacts-itself, .header-contacts .contacts-itself .phone-contacts, .header-contacts .contacts-itself .adress-contacts, .menu .menu-itself, .hello-1-with-img, .common .container, .section-zagolovok, .galery .galery-block, .video .video-slider .slider-for .video-item, .video .video-slider .slider-nav .video-item, .otzivi .otzivi-slider .otziv-item .otziv-container, .modal-form .modal-form-itself form, .consult .container, .consult .container .consult-opisanie, .consult .container .consult-img-block, .team .our-teams .team-block, .team .our-teams .team-block .team-itself, .contacts .contacts-block, .contacts .contacts-block .contacts-itself-block, .contacts .contacts-block .contacts-itself-block .contacts-itself, .contacts .contacts-block .contacts-itself-block .contacts-itself .contacts-text, .contacts .contacts-block .contacts-itself-block .contacts-social, .vacansy .vacansy-block, .vacansy .vacansy-block .vacansy-left, .vacansy .vacansy-block .vacansy-left .vacansy-link, .vacansy .vacansy-block .vacansy-left .vacansy-link p, .vacansy .vacansy-block .vacansy-right, .footer .footer-contacts, .footer .footer-contacts .contacts-without-logo, .footer .footer-contacts .contacts-without-logo .time-work, .footer .footer-contacts .contacts-without-logo .time-work .time-itself, .footer .footer-contacts .contacts-without-logo .contacts-itself, .footer .footer-contacts .contacts-without-logo .contacts-itself .phone-contacts, .footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts, .footer .footer-contacts .contacts-without-logo .socials-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,7 +32,7 @@
           align-items: center;
 }
 
-.header-contacts .time-work .time-itself p, .header-contacts .time-work .description-time p, .header-contacts .contacts-itself .phone-contacts a, .header-contacts .contacts-itself .adress-contacts p {
+.header-contacts .time-work .time-itself p, .header-contacts .time-work .description-time p, .header-contacts .contacts-itself .phone-contacts a, .header-contacts .contacts-itself .adress-contacts p, .footer .footer-contacts .contacts-without-logo .time-work .time-itself p, .footer .footer-contacts .contacts-without-logo .time-work .description-time p, .footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts p, .footer .descript-footer {
   font-family: "Roboto";
   font-size: 18px;
   line-height: 140%;
@@ -201,11 +201,18 @@ a:hover {
   font-size: 16px;
   line-height: 18px;
   color: #333333;
-  margin-right: 35px;
+  position: relative;
+  background: transparent;
+  padding: 14px;
 }
 
 .menu .menu-itself a:last-child {
   margin-right: 0;
+  font-weight: bold;
+}
+
+.menu .menu-itself a:hover {
+  background: #D3A566;
 }
 
 .slider .slider-itself .slide-one {
@@ -336,6 +343,7 @@ a:hover {
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
   opacity: 0;
+  position: relative;
 }
 
 .offer .all-offers .offer-item h3 {
@@ -356,6 +364,7 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 
 .offer .all-offers .offer-item p {
@@ -363,6 +372,12 @@ a:hover {
   font-size: 20px;
   line-height: 180%;
   padding: 20px;
+}
+
+.offer .all-offers .offer-item img {
+  position: absolute;
+  top: 0;
+  left: 10px;
 }
 
 .offer .all-offers .offer-item:nth-child(even) {
@@ -1113,6 +1128,26 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   width: 280px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 0;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.team .our-teams .team-block .team-itself:nth-child(1) {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.team .our-teams .team-block .team-itself:nth-child(2) {
+  -webkit-transition: all 0.4s ease 0.3s;
+  transition: all 0.4s ease 0.3s;
+}
+
+.team .our-teams .team-block .team-itself:nth-child(3) {
+  -webkit-transition: all 0.4s ease 0.5s;
+  transition: all 0.4s ease 0.5s;
 }
 
 .team .our-teams .team-block .team-itself .team-img {
@@ -1141,6 +1176,12 @@ a:hover {
   font-family: "Ubuntu";
   font-size: 20px;
   line-height: 140%;
+}
+
+.team .our-teams .team-block .team-show-block {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .contacts {
@@ -1326,5 +1367,115 @@ a:hover {
 
 .vacansy .vacansy-block .vacansy-right .form-p .btn-send_vacansy {
   margin-top: 30px;
+}
+
+.footer {
+  background: #000000;
+  padding: 30px 0 15px 0;
+  color: #FFFFFF;
+}
+
+.footer .footer-contacts {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer .footer-contacts .contacts-without-logo {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.footer .footer-contacts .contacts-without-logo .time-work {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 40px;
+}
+
+.footer .footer-contacts .contacts-without-logo .time-work .time-itself {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.footer .footer-contacts .contacts-without-logo .time-work .time-itself img {
+  margin-right: 10px;
+}
+
+.footer .footer-contacts .contacts-without-logo .time-work .time-itself p {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.footer .footer-contacts .contacts-without-logo .time-work .description-time p {
+  font-size: 17px;
+  margin-left: 30px;
+}
+
+.footer .footer-contacts .contacts-without-logo .contacts-itself {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.footer .footer-contacts .contacts-without-logo .contacts-itself .phone-contacts {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.footer .footer-contacts .contacts-without-logo .contacts-itself .phone-contacts a {
+  margin-left: 10px;
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 16px;
+  line-height: 180%;
+}
+
+.footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts p {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.footer .footer-contacts .contacts-without-logo .socials-link {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 40px;
+}
+
+.footer .footer-contacts .contacts-without-logo .socials-link a {
+  display: block;
+  width: 37px;
+  height: 37px;
+  margin-right: 10px;
+}
+
+.footer .descript-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 16px;
 }
 /*# sourceMappingURL=style.css.map */

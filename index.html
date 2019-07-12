@@ -251,6 +251,40 @@
             </div> 
         </div>
     </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-contacts">
+                <div class="contacts-without-logo">
+                    <div class="contacts-itself">
+                        <div class="phone-contacts">
+                            <img src="img/phone-icon.png" alt="phone-icon">
+                            <a href="tel:+79776780883">+7 (977) 678-08-83</a>
+                        </div>
+                        <div class="adress-contacts">
+                            <img src="img/adress.png" alt="adress-icon">
+                            <p>ул. Скобелевская д.12 (м. Скобелевская)</p>
+                        </div>
+                    </div>
+                    <div class="time-work">
+                        <div class="time-itself">
+                            <img src="img/clock.png" alt="clock-img">
+                            <p>Режим работы:</p>
+                        </div>
+                        <div class="description-time">
+                            <p>ежедневно с 11:00 до 21:00</p>
+                        </div>
+                    </div>
+                    <div class="socials-link">
+                        <a :href="social.url" v-for="social in socials" target="_blank"><img :src="social.img"></a>
+                    </div>
+                </div>
+                <div class="logo">
+                      <img src="img/footer/logo.png" alt="logo-img">
+                </div>
+            </div>
+            <div class="descript-footer">© 2019г. Студия красоты Art Me Master</div>
+        </div>
+    </section>
 </body>
 </html>
 

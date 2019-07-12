@@ -37,6 +37,7 @@ $gold: #E5C577
 
 $zagolovok: #DCC18A
 
+$back_menu:  #D3A566
 
 $back: #F9F8F4
 
@@ -168,10 +169,19 @@ a
             font-size: 16px
             line-height: 18px
             color: #333333
-            margin-right: 35px
+            position: relative
+            background: transparent
+            padding: 14px
 
             &:last-child()
                margin-right: 0 
+               font-weight: bold
+            
+            &:hover
+                background: $back_menu
+
+          
+
 
 .slider
 
@@ -277,6 +287,7 @@ a
             margin-bottom: 30px
             transition: all 0.7s ease
             opacity: 0
+            position: relative
 
             h3
                 font-family: "Montserrat"
@@ -289,12 +300,18 @@ a
                 display: flex
                 flex-flow: column
                 justify-content: center
+                text-align: center
 
             p
                 font-family: "Ubuntu"
                 font-size: 20px
                 line-height: 180%
                 padding: 20px
+
+            img
+                position: absolute
+                top: 0
+                left: 10px
 
             &:nth-child(even)
                 margin-left: 15px
@@ -928,7 +945,19 @@ a
                 flex-flow: column nowrap
                 justify-content: center
                 width: 280px
+                transition: $transition
+                opacity: 0
+                transform: scale(0.7)
 
+                &:nth-child(1)
+                   transition: $transition  
+
+                &:nth-child(2)
+                   transition: $transition 0.3s
+                
+                &:nth-child(3)
+                   transition: $transition 0.5s
+                
                 .team-img
                     width: 280px
                     height: 300px
@@ -952,6 +981,11 @@ a
                     font-family: "Ubuntu"
                     font-size: 20px
                     line-height: 140%
+        
+            .team-show-block
+                opacity: 1
+                transform: scale(1)
+                
 
 
 .contacts
@@ -1085,9 +1119,90 @@ a
                     @extend %button-send
                     margin-top: 30px
 
-         
+.footer
+    background: #000000
+    padding: 30px 0 15px 0 
+    color: #FFFFFF 
 
-        
+    .footer-contacts
+        @extend %flex
+        justify-content: space-between
+       
+
+        .contacts-without-logo
+            @extend %flex
+            justify-content: flex-start
+
+            .time-work
+                @extend %flex
+                flex-flow: column nowrap
+                justify-content: center
+                align-items: flex-start
+                margin-left: 40px
+
+                .time-itself
+                    @extend %flex
+                    justify-content: flex-start
+
+                    img 
+                        margin-right: 10px
+
+                    p
+                        @extend %header-p
+                        font-weight: bold
+                        font-size: 17px
+                
+                .description-time
+
+                    p
+                        @extend %header-p
+                        font-size: 17px
+                        margin-left: 30px
+
+            .contacts-itself
+                @extend %flex
+                flex-flow: column nowrap
+                justify-content: center
+                align-items: flex-start 
+
+                .phone-contacts
+                    @extend %flex
+                    justify-content: flex-start
+                    // margin-bottom: 5px
+
+                    a
+                        margin-left: 10px
+                        color: #ffffff
+                        font-family: "Ubuntu"
+                        font-size: 16px
+                        line-height: 180%
+
+                    
+                .adress-contacts
+                    @extend %flex
+                    justify-content: flex-start 
+
+                    p
+                        @extend %header-p
+                        font-size: 16px
+                        margin-left: 10px 
+
+            .socials-link
+                @extend %flex
+                justify-content: flex-start
+                margin-left: 40px
+
+                a
+                    display: block
+                    width: 37px
+                    height: 37px
+                    margin-right: 10px
+
+    .descript-footer
+        margin-top: 30px
+        text-align: center
+        @extend %header-p
+        font-size: 16px
 
                    
 
