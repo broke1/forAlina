@@ -215,6 +215,21 @@ a:hover {
   background: #D3A566;
 }
 
+.fixed-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.8;
+  z-index: 5;
+}
+
+.fixed-menu .menu-itself {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .slider .slider-itself .slide-one {
   background-image: url("../img/slider/slider-1.png");
 }
@@ -521,10 +536,64 @@ a:hover {
   padding: 4px;
   border: none;
   border-bottom: 1px solid #fff;
+  width: 240px;
 }
 
 .common .container .common-form form input:hover, .common .container .common-form form input:active, .common .container .common-form form input:focus {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.common .container .common-form form .accept-block input[type=checkbox] {
+  display: none;
+}
+
+.common .container .common-form form .accept-block input[type=checkbox]:checked + label:before {
+  border-right: none;
+  border-top: none;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+  top: 2px;
+  left: 2px;
+  height: 5px;
+}
+
+.common .container .common-form form .accept-block input[type=checkbox] + label {
+  font-family: "Ubuntu";
+  font-size: 14px;
+  line-height: 140%;
+  color: #ffffff;
+  padding-left: 30px;
+  position: relative;
+}
+
+.common .container .common-form form .accept-block input[type=checkbox] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffffff;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.common .container .common-form form .description-accept {
+  font-family: "Ubuntu";
+  font-size: 15px;
+  line-height: 180%;
+  margin: 20px 0;
+  text-align: center;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 1;
+  visibility: vissible;
+  width: 100%;
+}
+
+.common .container .common-form form .hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .common .container .common-form form .button-send {
@@ -538,7 +607,6 @@ a:hover {
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
-  margin-top: 60px;
   cursor: pointer;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -942,6 +1010,15 @@ a:hover {
   overflow: scroll;
 }
 
+.modal-form .modal-form-itself form select {
+  width: 314px;
+  font-family: "Ubuntu";
+  font-size: 18px;
+  line-height: 180%;
+  color: #333333;
+  padding: 5px;
+}
+
 .modal-form .modal-form-itself form .modal-file {
   position: relative;
   width: 305px;
@@ -994,6 +1071,64 @@ a:hover {
   font-size: 14px;
   line-height: 180%;
   border-radius: 5px;
+}
+
+.modal-form .modal-form-itself form .accept-block {
+  margin-top: 10px;
+}
+
+.modal-form .modal-form-itself form .accept-block input[type=checkbox] {
+  display: none;
+  width: 10px;
+}
+
+.modal-form .modal-form-itself form .accept-block input[type=checkbox]:checked + label:before {
+  border-right: none;
+  border-top: none;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+  top: 2px;
+  left: 2px;
+  height: 5px;
+}
+
+.modal-form .modal-form-itself form .accept-block input[type=checkbox] + label {
+  font-family: "Ubuntu";
+  font-size: 14px;
+  line-height: 140%;
+  color: #333333;
+  padding-left: 30px;
+  position: relative;
+}
+
+.modal-form .modal-form-itself form .accept-block input[type=checkbox] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #333333;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.modal-form .modal-form-itself form .description-accept {
+  font-family: "Ubuntu";
+  font-size: 15px;
+  line-height: 180%;
+  margin: 10px 0;
+  text-align: center;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 1;
+  visibility: vissible;
+  width: 100%;
+}
+
+.modal-form .modal-form-itself form .hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .modal-form .modal-form-itself .description {

@@ -48,7 +48,7 @@
     </section>
     <section class="menu">
         <div class="container menu-itself">
-            <a href="#" v-for="item in menu">{{item.name}}</a>
+            <a :href="item.url" v-for="item in menu">{{item.name}}</a>
         </div>
     </section>
     <section class="slider">
@@ -65,7 +65,7 @@
             </p>
         </div>
     </section>
-    <section class="offer">
+    <section class="offer" id="offer">
         <div class="container">
             <h2>Что могут предложить наши мастера:</h2>
             <div class="all-offers">
@@ -89,15 +89,22 @@
             </div>
             <div class="common-form">
                 <form action="/send/send.php" name="common">
+                    <input type="hidden" name="name_form" value="callback" class="form-item">
                     <input type="text" name="name" placeholder="Ваше имя">
                     <input type="text" name="phone" class="phone-form"  placeholder="+7 (___) ___-__-__ ">
+                    <div class="accept-block">
+                            <input id="accept" type="checkbox" name="accept" value="male">
+                            <label for="accept">Я разрешаю обработку моих персональных данных</label>
+                            
+                    </div> 
+                     <div class="description-accept hide">Согласитесь с обработкой данных</div>
                     <div class="button-send common-send">Отправить</div>
                 </form>
                 <div class="description hide">Мы скоро Вам позвоним</div>
             </div>
         </div>
     </section>
-    <section class="galery">
+    <section class="galery" id="galery">
         <div class="container">
             <div class="section-zagolovok">   
                 <h2>{{name}}</h2>
@@ -114,7 +121,7 @@
             </div>
         </div>
     </section>
-    <section class="video">
+    <section class="video" id="video">
         <div class="container">
             <div class="section-zagolovok">   
                 <h2>{{name}}</h2>
@@ -139,7 +146,7 @@
             </div>
         </div>
     </section>
-    <section class="otzivi">
+    <section class="otzivi"  id="otzivi">
         <div class="container">
             <div class="section-zagolovok">   
                 <h2>{{name}}</h2>
@@ -184,7 +191,7 @@
            
         </div>
     </section>
-    <section class="team">
+    <section class="team" id="team">
         <div class="container">
             <div class="section-zagolovok">   
                 <h2>{{name}}</h2>
@@ -195,7 +202,7 @@
     <article class="otzivi-form">
             <modal-form  :settings="settings"></modal-form>
     </article>
-    <section class="contacts">
+    <section class="contacts" id="contacts">
         <div class="container">
             <div class="section-zagolovok">   
                 <h2>{{name}}</h2>
@@ -223,15 +230,21 @@
             </div>
             <div class="common-form common-form-two">
                 <form action="/send/send.php" name="common_two">
+                    <input type="hidden" name="name_form" value="callback" class="form-item">
                     <input type="text" name="name" placeholder="Ваше имя">
                     <input type="text" name="phone" class="phone-form"  placeholder="+7 (___) ___-__-__ ">
+                    <div class="accept-block">
+                            <input id="accept-two" type="checkbox" name="accept" value="male">
+                            <label for="accept-two">Я разрешаю обработку моих персональных данных</label>
+                    </div> 
+                     <div class="description-accept hide">Согласитесь с обработкой данных</div>
                     <div class="button-send button-send-common-two common-send">Отправить</div>
                 </form>
                 <div class="description hide">Мы скоро Вам позвоним</div>
             </div>
         </div>
     </section>
-    <section class="vacansy">
+    <section class="vacansy" id="vacansy">
         <div class="container">
             <div class="section-zagolovok">   
                 <h2>{{name}}</h2>

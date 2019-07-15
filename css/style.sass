@@ -180,6 +180,18 @@ a
             &:hover
                 background: $back_menu
 
+.fixed-menu
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    opacity: 0.8
+    z-index: 5;
+
+    .menu-itself
+         justify-content: center
+
+
           
 
 
@@ -424,11 +436,59 @@ a
                     padding: 4px
                     border: none
                     border-bottom: 1px solid #fff
+                    width: 240px
 
                     &:hover, &:active, &:focus
                         background-color: rgba(255,255,255, 0.1)
 
-                    
+                .accept-block
+
+                    input[type=checkbox] 
+                        display: none
+
+                        &:checked + label
+                            &:before
+                                border-right: none
+                                border-top: none
+                                transform: rotate(-50deg)
+                                top: 2px
+                                left: 2px
+                                height: 5px
+
+                    input[type=checkbox] + label
+                        font-family: "Ubuntu"
+                        font-size: 14px
+                        line-height: 140%
+                        color: #ffffff
+                        padding-left: 30px
+                        position: relative
+
+                        &:before
+                            content: ''
+                            position: absolute
+                            top: 0
+                            left: 0
+                            width: 10px;
+                            height: 10px;
+                            border: 2px solid #ffffff
+                            transition: $transition
+
+                .description-accept
+                    font-family: "Ubuntu"
+                    font-size: 15px
+                    line-height: 180%
+                    margin: 20px 0
+                    text-align: center
+                    transition: $transition
+                    opacity: 1
+                    visibility: vissible
+                    width: 100%
+
+
+                .hide 
+                    opacity: 0
+                    visibility: hidden
+
                 .button-send
                     background: linear-gradient(89.25deg, #AE844D 0.15%, #FAF5AD 107.92%)
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -439,7 +499,7 @@ a
                     font-weight: bold
                     font-size: 20px
                     line-height: 120%
-                    margin-top: 60px
+                    // margin-top: 60px
                     cursor: pointer
                     transition: $transition
 
@@ -466,6 +526,10 @@ a
             .hide 
                 opacity: 0
                 visibility: hidden
+
+      
+
+
             
 .section-zagolovok
     @extend %flex
@@ -789,6 +853,15 @@ a
                 height: 150px
                 overflow: scroll
 
+            select
+                width: 314px
+                font-family: "Ubuntu"
+                font-size: 18px
+                line-height: 180%
+                color: #333333
+                padding: 5px
+
+
             .button-send-modal
                 @extend %button-send
             
@@ -833,6 +906,57 @@ a
                         line-height: 180%
                         border-radius: 5px
 
+            .accept-block
+                margin-top: 10px
+
+                input[type=checkbox] 
+                    display: none
+                    width: 10px
+
+                    &:checked + label
+
+                        &:before
+                            border-right: none
+                            border-top: none
+                            transform: rotate(-50deg)
+                            top: 2px
+                            left: 2px
+                            height: 5px
+
+                input[type=checkbox] + label
+                    font-family: "Ubuntu"
+                    font-size: 14px
+                    line-height: 140%
+                    color: #333333
+                    padding-left: 30px
+                    position: relative
+
+                    &:before
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 10px;
+                        height: 10px;
+                        border: 2px solid #333333
+                        transition: $transition
+
+            .description-accept
+                font-family: "Ubuntu"
+                font-size: 15px
+                line-height: 180%
+                margin: 10px 0
+                text-align: center
+                transition: $transition
+                opacity: 1
+                visibility: vissible
+                width: 100%
+
+
+            .hide 
+                opacity: 0
+                visibility: hidden
+
         .description
                 font-family: "Open_Sans"
                 font-size: 25px
@@ -848,6 +972,8 @@ a
                 margin: 0
                 height: 0 !important
                 padding: 0
+
+        
         
             
 

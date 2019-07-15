@@ -7,14 +7,14 @@ window.addEventListener('load', function() {
         el: '.menu-itself',
         data: {
             menu: [
-                { name: 'О нас'},
-                { name: 'Галерея'},
-                { name: 'Видео'},
-                { name: 'Отзывы'},
-                { name: 'Наша команда'},
-                { name: 'Контакты'},
-                { name: 'Вакансии'},
-                { name: 'Прайс-лист'},
+                { name: 'О нас', url: "#offer"},
+                { name: 'Галерея', url: "#galery"},
+                { name: 'Видео', url: "#video"},
+                { name: 'Отзывы', url: "#otzivi"},
+                { name: 'Наша команда', url: "#team"},
+                { name: 'Контакты', url: "#contacts"},
+                { name: 'Вакансии', url: "#vacansy"},
+                { name: 'Прайс-лист', url: "#"},
             ],
         }
     })
@@ -108,7 +108,9 @@ window.addEventListener('load', function() {
      let vacansy_array = [];
 
      let teams = [];
-     let teams_array = [];
+
+     let menu = document.querySelector('.menu');
+     let header = document.querySelector('.header'); 
 
 
     // team-show-block
@@ -123,7 +125,7 @@ window.addEventListener('load', function() {
         if (current_scroll > last_scroll) {
                
              all_offers.forEach(function(item,i) {
-                if ((current_scroll+ screen.height) > array_bottom_offer[i]) {
+                if ((current_scroll+ screen.height) > array_bottom_offer[i]-100) {
                     item.classList.add('show-offer');  
                 }
             });  
@@ -136,6 +138,7 @@ window.addEventListener('load', function() {
 
         
             
+
             teams = document.querySelectorAll('.team-itself');
 
 
@@ -144,15 +147,18 @@ window.addEventListener('load', function() {
               if ((item.getBoundingClientRect().bottom - screen.height + 200) < 0) {
                   item.classList.add('team-show-block'); 
               }
-           });  
+           });
 
+           if (header.getBoundingClientRect().bottom < 0) {
+              menu.classList.add('fixed-menu');
+              }
            
 
         } else { 
 
 
             all_offers.forEach(function(item,i) {
-                if ((current_scroll+ screen.height) < array_bottom_offer[i]) {
+                if ((current_scroll+ screen.height) < array_bottom_offer[i]-100) {
                     item.classList.remove('show-offer');  
                 }
             });   
@@ -170,8 +176,10 @@ window.addEventListener('load', function() {
                   item.classList.remove('team-show-block'); 
               }
            }); 
- 
 
+           if (header.getBoundingClientRect().bottom > 0) {
+            menu.classList.remove('fixed-menu');
+              }
 
           
         }
@@ -182,48 +190,57 @@ window.addEventListener('load', function() {
 
 
       
-      document.querySelector('.button-send').addEventListener('click', () => {
-           
-             // создать объект для формы
-  var formData = new FormData(document.forms.common);
+      document.querySelector('.button-send').addEventListener('click', (event) => {
 
-  // добавить к пересылке ещё пару ключ - значение
-  //formData.append("name", "Fred");
+        let parrent = event.target.parentElement;
 
+       let accept = parrent.querySelector('input[type="checkbox"]');
+       let description = parrent.parentElement.querySelector('.description-accept');
+        if (accept.checked) {
+              var formData = new FormData(document.forms.common);
 
-  // отослать
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "/send/send.php");
-  xhr.send(formData);
+              
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/send/send.php");
+                xhr.send(formData);
 
-  xhr.onreadystatechange = function() {
-    if (this.readyState != 4) return;
-  
-    if (this.status != 200) {
-      console.log( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
-      return;
-    } else {
-        document.querySelector('.common-form form').classList.add('hide');
-        setTimeout(() =>{
-          document.querySelector('.common-form .description').classList.remove('hide');
-        }, 300);
+                xhr.onreadystatechange = function() {
+                  if (this.readyState != 4) return;
+                
+                  if (this.status != 200) {
+                    console.log( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
+                    return;
+                  } else {
+                        console.log( xhr.responseText ); 
+                      document.querySelector('.common-form form').classList.add('hide');
+                      setTimeout(() =>{
+                        document.querySelector('.common-form .description').classList.remove('hide');
+                      }, 300);
 
-    }
+                  }
 
-  }
+                }
+        } else {
+          description.classList.remove('hide');
+          setTimeout(() =>{
+            description.classList.add('hide');
+                }, 2000);
+        }
+            
 
       });
 
       document.querySelector('.button-send-common-two').addEventListener('click', () => {
-           
-                    // создать объект для формы
+
+
+        let parrent = event.target.parentElement;
+
+        let accept = parrent.querySelector('input[type="checkbox"]');
+        let description = parrent.parentElement.querySelector('.description-accept');
+         if (accept.checked) { 
+                
             var formData = new FormData(document.forms.common_two);
 
-            // добавить к пересылке ещё пару ключ - значение
-            //formData.append("name", "Fred");
-
-
-            // отослать
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/send/send.php");
             xhr.send(formData);
@@ -235,15 +252,20 @@ window.addEventListener('load', function() {
             console.log( 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался') );
             return;
             } else {
-              document.querySelector('.common-form form').classList.add('hide');
+              document.querySelector('.common-form-two form').classList.add('hide');
               setTimeout(() =>{
-                document.querySelector('.description').classList.remove('hide');
+                document.querySelector('.common-form-two .description').classList.remove('hide');
               }, 300);
 
             }
 
             }
-
+      } else {
+            description.classList.remove('hide');
+            setTimeout(() =>{
+              description.classList.add('hide');
+                  }, 2000);
+          }
             });
 
       
@@ -476,11 +498,18 @@ new Vue({
                         <input type="text" name="name" placeholder="Ваше имя" class="form-item">
                         <input type="text" name="phone" class="phone-form-modal form-item"  placeholder="+7 (___) ___-__-__ " >
                         <textarea rows="7" cols="42" v-if="settings.textarea"   name="otziv" class="form-item" :placeholder="settings.textarea_placeholder"></textarea>
+                        <select size="1"  name="select" class="form-item" v-if="settings.select.seen">
+                            <option :value="option.name"  v-for="option in  settings.select.option">{{option.name}}</option>
+                       </select>
                         <div class="form-group modal-file form-item" v-if="settings.file"  >
                             <label for="modal__file" class="textover">Файл не загружен</label>
                             <input type="file" id="modal__file" name="file"   value=""></input>
                         </div>
-                        
+                        <div class="accept-block">
+                            <input id="accept-modal" type="checkbox" name="accept" value="male">
+                            <label for="accept-modal">Я разрешаю обработку моих персональных данных</label>
+                        </div> 
+                        <div class="description-accept hide">Согласитесь с обработкой данных</div>
                         <div  class="button-send-modal  form-item" >Отправить</div>
                     </form>
                     <div class="description hide">{{settings.description}}</div>
@@ -499,7 +528,10 @@ new Vue({
                     hidden : 'otzivi',
                     textarea: true,
                     textarea_placeholder: "Ваш отзыв",
-                    file: true
+                    file: true,
+                    select: {
+                         seen: false,
+                     }
                   },
             },
               mounted: function () {
@@ -554,7 +586,10 @@ new Vue({
           hidden : 'otzivi',
           textarea: true,
           textarea_placeholder: "Ваш отзыв",
-          file: true
+          file: true,
+          select: {
+              seen: false,
+          }
          }; 
        
         showModalForm(new_form);
@@ -568,7 +603,10 @@ new Vue({
           hidden : 'consult',
           textarea: false,
           textarea_placeholder: "Название вакансии",
-          file: false
+          file: false,
+          select: {
+              seen: false,
+          }
         };
         showModalForm(new_form);
        });
@@ -577,11 +615,22 @@ new Vue({
 
         let new_form  = {
          zagolovok: "Оставьте свои контактные данные и мы Вам перезвоним",
-         description: 'Контакты отправлена',
+         description: 'Контакты отправлены',
          hidden : 'vacansy',
          textarea_placeholder: "Название вакансии",
-         textarea: true,
-         file: false
+         textarea: false,
+         file: true,
+         select: {
+              seen: true,
+              option: [
+                    {name: "Администратор"},
+                    {name: "Менеджер по подбору лака для ногтей"},
+                    {name: "Парикмахер-универсал"},
+                    {name: "Администратор"},
+                    {name: "Менеджер по подбору лака для ногтей"},
+                    {name: "Парикмахер-универсал"},
+                  ]
+          }
        };
        showModalForm(new_form);
       });
@@ -609,10 +658,22 @@ new Vue({
 
        document.querySelector('.modal-form .button-send-modal').addEventListener('click', () => {
            
-                  let form_modal = document.querySelector('.modal-form form');
-                  let form_height = form_modal.getBoundingClientRect().height;
-                  form_modal.style.height = form_height + 'px';
+                //   let form_modal = document.querySelector('.modal-form form');
+                //   let form_height = form_modal.getBoundingClientRect().height;
+                //   form_modal.style.height = form_height + 'px';
+                let parrent = event.target.parentElement;
+
+                let accept = parrent.querySelector('input[type="checkbox"]');
+                let description = parrent.parentElement.querySelector('.description-accept');
+                 if (accept.checked) { 
                   sendModal(document.forms.modal);
+                   }  else {
+                    description.classList.remove('hide');
+                    setTimeout(() =>{
+                      description.classList.add('hide');
+                          }, 2000);
+                  }
+
 
               });
 
@@ -645,14 +706,6 @@ new Vue({
                     
 
 
-                    document.querySelector('.modal-form .description').classList.remove('hide');
-                    document.querySelector('.modal-form form').classList.add('hide');
-                    setTimeout(()=>{
-                        document.querySelector('.modal-form').style.opacity = "0";
-                        document.querySelector('.modal-form').style.visibility = "hidden";
-                    }, 800);
-
-
                     return;
                     } else {
                       console.log(this.responseText);
@@ -668,9 +721,24 @@ new Vue({
 
                     }
               }
-      
- 
-            
 
+
+              $('a[href^="#"]').on('click', function(event) {
+                // отменяем стандартное действие
+                event.preventDefault();
+                
+                let link = $(this).attr("href");
+               // console.log($.attr(this, 'href').offset().top);
+                let top = $(link).offset().top;
+          
+                
+                $('html, body').animate({scrollTop: top}, 1000);
+              
+              });
+
+      
 });
+
+
+
 

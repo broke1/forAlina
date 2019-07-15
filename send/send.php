@@ -11,42 +11,86 @@ include_once('PHPMailer/class.phpmailer.php');
 
 class SendForms {
 
-    public $id_of_form = ''; // Имя формы
-    public $name_of_product = ''; // Название товара
+    public $name_form = ''; // Имя формы
     public $name = ''; // Имя
-    public $email = '';  // Почта
     public $phone = ''; // Телефон
-    public $text = '';  // Сообщение
-    public $to_mail = ''; // Кому отправлтяь письма 
-    public $name_of_site = ''; // Название сайта
+    public $otziv = '';  // Сообщение
+    public $to_mail = ''; // Кому отправлять письма 
+    public $select = ''; //Выбранная вакансия
 
 
     public function sendmail() {
 
 
-          echo $_POST;
+         print_r($_POST);
            
              
            
-        //  if ($this->name != '') {
-        //     $this->name = htmlspecialchars($this->name);
-        //     $this->name = trim($this->name);
-        //  }
-        //  if ($this->email != '') {
-        //     $this->email = htmlspecialchars($this->email);
-        //     $this->email = trim($this->email);
-        //  }
-        //  if ($this->phone != '') {
-        //     $this->phone = htmlspecialchars($this->phone);
-        //     $this->phone = trim($this->phone);
-        //  }
-        //  if ($this->text != '') {
-        //     $this->text = htmlspecialchars($this->text);
-        //     $this->text = trim($this->text);
-        //  }
+         if ($this->name != '') {
+            $this->name = htmlspecialchars($this->name);
+            $this->name = trim($this->name);
+         }
+         if ($this->phone != '') {
+            $this->phone = htmlspecialchars($this->phone);
+            $this->phone = trim($this->phone);
+         }
+         if ($this->otziv != '') {
+            $this->otziv = htmlspecialchars($this->otziv);
+            $this->otziv = trim($this->otziv);
+         }
 
-        //  mail($this->to_mail, "Хочу записаться", "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone,"From: artmemaster.ru \r\n"."Content-type: text/plain; charset=UTF-8\r\n");
+
+        if ($this->name_form == 'callback') {
+               mail($this->to_mail, "Хочу записаться", "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone,"From: artmemaster.ru \r\n"."Content-type: text/plain; charset=UTF-8\r\n");
+        } elseif($this->name_form == 'otzivi') {
+            
+                      $email = new PHPMailer();
+                        $email->From      = 'artmemaster@yandex.ru';
+                        $email->FromName  = 'artmemaster.ru';
+                        $email->Subject   = 'Мой отзыв';
+                        $email->Body      = "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone." \r\nМой вопрос:   ".$this->otziv;
+                        $email->CharSet = "UTF-8";
+                        $adres = explode(',',$this->to_mail);
+                        foreach ($adres as $key=>$value) {
+                          $email->AddAddress( $value);
+                        }
+                        
+                        
+                        //$file_to_attach = 'PATH_OF_YOUR_FILE_HERE';
+                        if ($_FILES) {
+                        $email->AddAttachment( $_FILES['file']['tmp_name'] , $_FILES['file']['name'] );
+                        }
+                        if(!$email->Send()) {
+                          echo $email->ErrorInfo;
+                        }
+                        
+        } elseif($this->name_form == "consult") {
+             mail($this->to_mail, "Хочу получить консультацию", "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone,"From: artmemaster.ru \r\n"."Content-type: text/plain; charset=UTF-8\r\n");
+        }  elseif($this->name_form == "vacansy") {
+           
+              $email = new PHPMailer();
+                        $email->From      = 'artmemaster@yandex.ru';
+                        $email->FromName  = 'artmemaster.ru';
+                        $email->Subject   = 'Хочу работать у Вас';
+                        $email->Body      = "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone." \r\nНазвание вакансии:   ".$this->select;
+                        $email->CharSet = "UTF-8";
+                        $adres = explode(',',$this->to_mail);
+                        foreach ($adres as $key=>$value) {
+                          $email->AddAddress( $value);
+                        }
+                        
+                        
+                        //$file_to_attach = 'PATH_OF_YOUR_FILE_HERE';
+                        if ($_FILES) {
+                        $email->AddAttachment( $_FILES['file']['tmp_name'] , $_FILES['file']['name'] );
+                        }
+                        if(!$email->Send()) {
+                          echo $email->ErrorInfo;
+                        }
+        }
         
+        
+    
     
         
 
@@ -136,29 +180,29 @@ foreach ($val as $key => $value) {
 //echo print_r($val);
 
 
-if ($_POST['id_of_form']) {
-    $send->id_of_form = $_POST['id_of_form'];
-  }
-  if ($_POST['name_of_product']) {
-    $send->name_of_product = $_POST['name_of_product'];
+if ($_POST['name_form']) {
+    $send->name_form = $_POST['name_form'];
   }
 if ($_POST['name']) {
   $send->name = $_POST['name'];
 }
-if ($_POST['email']) {
-    $send->email = $_POST['email'];
-  }
   if ($_POST['phone']) {
     $send->phone = $_POST['phone'];
   }
-  if ($_POST['text']) {
-      $send->text = $_POST['text'];
-    }
+  if ($_POST['otziv']) {
+      $send->otziv = $_POST['otziv'];
+  }
+  if ($_POST['select']) {
+      $send->select = $_POST['select'];
+  }
+
+    
+    
     
 
 $send->to_mail = "artmemaster@yandex.ru";
 // bykova@antivor.ru
-$send->name_of_site = "";
+//$send->name_of_site = "ArtMeMaster";
 $send->sendmail();
 //$send->sendcis();
 
