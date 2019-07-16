@@ -39,6 +39,12 @@
   color: #FFFFFF;
 }
 
+@media screen and (max-width: 780px) {
+  .header-contacts .time-work .time-itself p, .header-contacts .time-work .description-time p, .header-contacts .contacts-itself .phone-contacts a, .header-contacts .contacts-itself .adress-contacts p, .footer .footer-contacts .contacts-without-logo .time-work .time-itself p, .footer .footer-contacts .contacts-without-logo .time-work .description-time p, .footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts p, .footer .descript-footer {
+    font-size: 14px;
+  }
+}
+
 .otzivi .btn-send_otziv, .modal-form .modal-form-itself form .button-send-modal, .consult .container .consult-img-block .btn-send_consult, .vacansy .vacansy-block .vacansy-right .form-p .btn-send_vacansy {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,6 +106,18 @@ a:hover {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    width: 720px;
+  }
+}
+
 .header {
   background-color: #000000;
   height: 65px;
@@ -146,6 +164,13 @@ a:hover {
   font-size: 14px;
 }
 
+@media screen and (max-width: 780px) {
+  .header-contacts .time-work {
+    width: 260px;
+    margin-right: 35px;
+  }
+}
+
 .header-contacts .contacts-itself {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -184,6 +209,16 @@ a:hover {
   margin-right: 10px;
 }
 
+@media screen and (max-width: 780px) {
+  .header-contacts .contacts-itself .adress-contacts {
+    width: 200px;
+  }
+  .header-contacts .contacts-itself .adress-contacts img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 .menu {
   background-color: #E5C577;
   height: 45px;
@@ -215,6 +250,12 @@ a:hover {
   background: #D3A566;
 }
 
+@media screen and (max-width: 780px) {
+  .menu .menu-itself a {
+    font-size: 12px;
+  }
+}
+
 .fixed-menu {
   position: fixed;
   top: 0;
@@ -244,6 +285,12 @@ a:hover {
 .slider .slider-itself .slides a {
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .slider .slider-itself .slides {
+    height: 350px;
+  }
 }
 
 .slider .slider-itself .slick-prev, .slider .slider-itself .slick-next {
@@ -417,6 +464,12 @@ a:hover {
 .offer .all-offers .offer-item:nth-child(4) {
   -webkit-transform: translate(150px, 0);
           transform: translate(150px, 0);
+}
+
+@media screen and (max-width: 1000px) {
+  .offer .all-offers .offer-item {
+    max-width: 450px;
+  }
 }
 
 .offer .all-offers .show-offer {
@@ -703,6 +756,13 @@ a:hover {
 
 .galery .galery-block a:hover span {
   opacity: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .galery .galery-block {
+    width: 860px;
+    margin: 0 auto;
+  }
 }
 
 #lightbox .lb-dataContainer .lb-details {
@@ -1129,6 +1189,12 @@ a:hover {
 .modal-form .modal-form-itself form .hide {
   opacity: 0;
   visibility: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+  .modal-form .modal-form-itself {
+    top: 7%;
+  }
 }
 
 .modal-form .modal-form-itself .description {
@@ -1606,6 +1672,12 @@ a:hover {
   width: 37px;
   height: 37px;
   margin-right: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer .footer-contacts .contacts-without-logo .socials-link {
+    margin-left: 15px;
+  }
 }
 
 .footer .descript-footer {
