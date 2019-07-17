@@ -113,6 +113,8 @@ window.addEventListener('load', function() {
      let header = document.querySelector('.header'); 
 
 
+
+
     // team-show-block
      
 
@@ -458,8 +460,15 @@ new Vue({
         asNavFor: '.slider-nav'
       });
 
+
+      let resolution = screen.width;
+      let number_slides = 4;
+      if (resolution < 780) {
+        number_slides = 2;
+      }
+      
       $('.slider-nav').slick({
-        slidesToShow: 4,
+        slidesToShow: number_slides,
         slidesToScroll: 1,
         asNavFor: '.slider-for',
         arrows: true,
