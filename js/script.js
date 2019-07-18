@@ -745,6 +745,21 @@ new Vue({
               
               });
 
+
+
+              if (screen.width < 500) {
+                document.querySelector('.menu-button').addEventListener('click', function(){
+                  let menu = document.querySelector('.menu');
+                    if (menu.getBoundingClientRect().height == 45) {
+                        menu.style.height = '410px';
+                        menu.querySelector('.menu-button').classList.add('menu-button-open');
+                    } else {
+                      menu.style.height = '45px';
+                        menu.querySelector('.menu-button').classList.remove('menu-button-open');
+                    }
+                });
+              }
+
       
 });
 

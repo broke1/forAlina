@@ -99,6 +99,10 @@ a
 
     @media screen and (max-width: 780px)
         width: 720px
+
+    @media screen and (max-width: 430px) 
+        width: 100%
+
    
 
 .header
@@ -109,6 +113,16 @@ a
         height: 65px
         @extend %flex
         justify-content: space-between
+
+        @media screen and (max-width: 430px)
+            justify-content: flex-start
+
+            .logo
+                width: 190px
+                margin-left: 20px
+
+                img
+                    width: 100%
 
 .header-contacts
     @extend %flex
@@ -150,6 +164,9 @@ a
             width: 260px
             margin-right: 35px
 
+        @media screen and (max-width: 430px)
+            display: none
+
     .contacts-itself
         @extend %flex
         flex-flow: column nowrap
@@ -167,6 +184,10 @@ a
                @extend %header-p
                line-height: 21px
                font-weight: bold
+
+               @media screen and (max-width: 430px)
+                   font-size: 13px
+                   
         
         .adress-contacts
             @extend %flex
@@ -176,6 +197,10 @@ a
                 @extend %header-p
                 font-size: 14px
                 margin-right: 10px
+
+                @media screen and (max-width: 430px)
+                    font-size: 13px
+                    padding-left: 18px
 
             @media screen and (max-width: 780px)
                 width: 200px
@@ -187,6 +212,10 @@ a
 .menu 
     background-color: $gold
     height: 45px
+    transition: $transition
+
+    .menu-button
+        display: none
 
     .menu-itself
         height: 45px
@@ -212,20 +241,71 @@ a
             @media screen and (max-width: 780px)
                 font-size: 12px
 
+
+    @media screen and (max-width: 430px)
+        overflow: hidden
+        position: relative
+
+        .menu-button
+            display: flex
+            position: absolute
+            top: 10px
+            right: 10px
+            width: 30px
+            height: 30px
+            flex-flow: column nowrap
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            transition: $transition
+
+            .menu-dash
+                height: 6px
+                width: 100%
+                border: 3px solid #000000
+                border-radius: 5px
+                margin-bottom: 5px
+                opacity: 1
+                transition: $transition
+
+                
+
+
+        .container
+            flex-flow: column nowrap
+            padding-top: 45px
+            height: 360px
+
+        .menu-button-open
+
+            .menu-dash
+
+                &:nth-child(1)
+                    transform: rotate(-45deg) translate(-7px,7px)
+
+                &:nth-child(2)
+                    opacity: 0
+
+
+                &:nth-child(3)
+                    transform: rotate(45deg) translate(-8px,-8px)
+
+
 .fixed-menu
     position: fixed
     top: 0
     left: 0
     width: 100%
     opacity: 0.8
-    z-index: 5;
+    z-index: 5
 
     .menu-itself
          justify-content: center
 
+    @media screen and (max-width: 430px)
+        opacity: 0.9
 
-          
-
+    
 
 .slider
 
@@ -295,6 +375,10 @@ a
 
                 button
                     background-image: url('../img/dot-round.png')
+
+
+    @media screen and (max-width: 430px)
+        display: none
 
 .hello-1-with-img
     @extend %flex
