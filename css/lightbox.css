@@ -112,6 +112,11 @@ body.lb-disable-scrolling {
   -o-transition: opacity 0.6s;
   transition: opacity 0.6s;
 }
+@media screen and (max-width: 380px) {
+  .lb-nav a.lb-prev {
+    left: -10%;
+  }
+}
 
 .lb-nav a.lb-prev:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -130,6 +135,12 @@ body.lb-disable-scrolling {
   -moz-transition: opacity 0.6s;
   -o-transition: opacity 0.6s;
   transition: opacity 0.6s;
+}
+
+@media screen and (max-width: 380px) {
+  .lb-nav a.lb-next {
+    right: -10%;
+  }
 }
 
 .lb-nav a.lb-next:hover {

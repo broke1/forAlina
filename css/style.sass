@@ -173,6 +173,9 @@ a
         justify-content: center
         align-items: flex-end 
 
+        @media screen and (max-width: 430px)
+            padding-right: 10px
+
         .phone-contacts
            @extend %flex
            justify-content: flex-end 
@@ -200,7 +203,8 @@ a
 
                 @media screen and (max-width: 430px)
                     font-size: 13px
-                    padding-left: 18px
+                    text-align: right
+                    padding-left: 15px
 
             @media screen and (max-width: 780px)
                 width: 200px
@@ -384,9 +388,16 @@ a
     @extend %flex
     justify-content: center
     padding: 80px 0
+
+    @media screen and (max-width: 430px)
+        flex-flow: column nowrap
     
     img
         margin-right: 60px
+
+        @media screen and (max-width: 430px)
+            margin-right: 0
+            margin-bottom: 60px
 
     p
         font-family: "Ubuntu"
@@ -406,6 +417,9 @@ a
     padding: 95px 0 40px 0
     color: #333333
 
+    @media screen and (max-width: 430px)
+        padding: 40px 20px
+
     h2
         margin-bottom: 90px
         font-family: "Montserrat"
@@ -413,11 +427,15 @@ a
         font-size: 40px
         line-height: 50px
 
+        @media screen and (max-width: 430px)
+            font-size: 35px
+
     .all-offers
         display: flex
         flex-flow: row wrap
         justify-content: flex-start
         align-items: flex-start
+        overflow: hidden
 
         @media screen and (max-width: 780px)
             justify-content: center
@@ -443,11 +461,18 @@ a
                 justify-content: center
                 text-align: center
 
+                @media screen and (max-width: 380px)
+                    font-size: 25px
+                    text-align: right
+
             p
                 font-family: "Ubuntu"
                 font-size: 20px
                 line-height: 180%
                 padding: 20px
+
+                @media screen and (max-width: 380px)
+                    font-size: 16px
 
             img
                 position: absolute
@@ -517,6 +542,9 @@ a
 
             &:first-child()
                 margin-bottom: 20px
+            
+            @media screen and (max-width: 430px)
+                padding: 0 20px
 
 
 .common
@@ -528,8 +556,15 @@ a
         @extend %flex
         justify-content: flex-start
 
+        @media screen and (max-width: 430px)
+            flex-flow: column nowrap
+
+
         .common-text
             max-width: 600px
+
+            @media screen and (max-width: 430px)
+                margin-bottom: 40px
 
             h2
                 font-family: "Montserrat"
@@ -552,6 +587,12 @@ a
 
                 p
                     font-size: 16px
+
+            @media screen and (max-width: 380px)
+                padding: 0 20px
+
+                h2
+                    font-size: 20px
 
 
         .common-form
@@ -704,7 +745,9 @@ a
     .galery-block
         @extend %flex
         justify-content: flex-start
-        flex-flow: row wrap  
+        flex-flow: row wrap 
+
+
 
         a
             height: 290px
@@ -732,6 +775,10 @@ a
 
         @media screen and (max-width: 780px)
             width: 570px
+
+        @media screen and (max-width: 430px)
+            width: 100%
+            justify-content: center
 
 
 #lightbox
@@ -783,6 +830,13 @@ a
                     overflow: hidden
                     cursor: pointer
                     position: relative
+
+                    @media screen and (max-width: 430px)
+                        width: 90vw
+                        height: 250px
+
+                    @media screen and (max-width: 380px)
+                        height: 200px
                     
 
                     .shadow-video
@@ -903,10 +957,17 @@ a
                 @extend %flex
                 justify-content: center
 
+                @media screen and (max-width: 430px)
+                    flex-flow: column nowrap
+
+
                 .img-otziv
                     width: 220px
                     height: 230px
                     border-radius: 5px
+
+                    @media screen and (max-width: 430px)
+                        margin-bottom: 40px
 
                 p
                     font-family: "Ubuntu"
@@ -915,6 +976,10 @@ a
                     color: #333333
                     padding-left: 70px
                     width: 550px
+
+                    @media screen and (max-width: 430px)
+                        width: 90vw
+                        padding: 0
 
     .btn-send_otziv
         @extend %button-send
@@ -953,6 +1018,12 @@ a
         transform: translateX(-50%)
         z-index: 4
 
+        @media screen and (max-width: 430px)
+            width: 90vw
+
+        @media screen and (max-width: 380px)
+            width: 96vw
+
         .close-btn
             position: absolute
             top: 5px
@@ -976,6 +1047,9 @@ a
             padding: 10px
             padding-top: 40px
 
+            @media screen and (max-width: 380px)
+                max-height: 77vh
+
             .zagolovok-form
                 font-family: "Open_Sans"
                 font-weight: bold
@@ -989,6 +1063,12 @@ a
                 top: -20px
                 left: 50%
                 transform: translateX(-50%)
+
+                @media screen and (max-width: 430px)
+                    font-size: 18px
+
+                @media screen and (max-width: 380px)
+                    font-size: 14px
 
             .form-item
                 margin: 10px 0
@@ -1012,6 +1092,9 @@ a
                 padding: 5px
                 height: 150px
                 overflow: scroll
+
+                @media screen and (max-width: 430px)
+                    height: 120px
 
             select
                 width: 314px
@@ -1151,6 +1234,9 @@ a
             align-items: flex-start
             justify-content: center
 
+            @media screen and (max-width: 430px)
+                padding: 0 20px
+
             p
 
                 &:nth-child(1)
@@ -1159,6 +1245,9 @@ a
                     font-size: 30px
                     line-height: 140%
                     margin-bottom: 30px
+
+                    @media screen and (max-width: 380px)
+                        font-size: 25px
     
                 &:nth-child(2)
                     font-family: "Ubuntu"
@@ -1181,6 +1270,11 @@ a
             background-repeat: no-repeat
             @extend %flex
             justify-content: center
+
+            @media screen and (max-width: 430px)
+                width: 100vw
+                min-width: 100vw
+                height: 400px
 
             .btn-send_consult
                 @extend %button-send
@@ -1213,7 +1307,7 @@ a
             text-align: center
 
         .right_with_before
-            right: 200px;
+            right: 200px
             text-align: right
 
             &:before
@@ -1226,6 +1320,8 @@ a
                 top: 0
                 left: 280px
 
+                
+
             @media screen and (max-width: 780px) 
                 position: absolute
                 top: 500px
@@ -1233,6 +1329,16 @@ a
                 &:before
                     top: -510px
                     left: 80px
+
+            @media screen and (max-width: 430px)
+                right: 20vw
+                top: 475px
+
+                &:before
+                    left: 50px
+
+            @media screen and (max-width: 380px)
+                right: 15vw
             
                 
         .team-block
@@ -1330,13 +1436,19 @@ a
                     margin: 0 auto
             
             .contacts-map
-                width: 720px
+                width: 700px
+
+                @media screen and (max-width: 430px)
+                    width: 100vw
 
         .contacts-itself-block
             @extend %flex
             flex-flow: column nowrap
             justify-content: flex-start
             align-items: flex-start
+
+            @media screen and (max-width: 430px)
+                padding: 0 20px
 
             .contacts-itself
                 @extend %flex
@@ -1378,6 +1490,9 @@ a
     .contacts-map
         width: 560px
         height: 340px   
+
+        @media screen and (max-width: 380px)
+            height: 240px
 
 
         
@@ -1433,6 +1548,9 @@ a
             justify-content: center
             max-width: 600px
 
+            @media screen and (max-width: 430px)
+                padding: 0 20px
+
             .phone-p
                 font-family: "Ubuntu"
                 font-weight: bold
@@ -1440,6 +1558,9 @@ a
                 line-height: 180%
                 color: #333333
                 margin-bottom: 50px
+
+                @media screen and (max-width: 430px)
+                    font-size: 18px
 
                 a
                     display: inline-block
@@ -1453,6 +1574,9 @@ a
                 font-size: 20px
                 line-height: 180%
                 color: #333333
+
+                @media screen and (max-width: 430px)
+                    font-size: 18px
 
                 .btn-send_vacansy
                     @extend %button-send
@@ -1475,11 +1599,25 @@ a
     .footer-contacts
         @extend %flex
         justify-content: space-between
+
+        @media screen and (max-width: 430px)
+            align-items: flex-end
+
+            .logo
+                margin-right: 20px
        
 
         .contacts-without-logo
             @extend %flex
             justify-content: flex-start
+
+            @media screen and (max-width: 430px)
+                flex-flow: column nowrap
+                padding: 0 20px
+                align-items: flex-start
+
+                
+
 
             .time-work
                 @extend %flex
@@ -1487,6 +1625,10 @@ a
                 justify-content: center
                 align-items: flex-start
                 margin-left: 40px
+
+                @media screen and (max-width: 430px)
+                    margin-left: 0
+                    margin-bottom: 20px
 
                 .time-itself
                     @extend %flex
@@ -1512,6 +1654,9 @@ a
                 flex-flow: column nowrap
                 justify-content: center
                 align-items: flex-start 
+
+                @media screen and (max-width: 430px)
+                    margin-bottom: 20px
 
                 .phone-contacts
                     @extend %flex
@@ -1558,7 +1703,10 @@ a
                 @media screen and (max-width: 780px) 
                     margin-right: 15px
 
-                
+                @media screen and (max-width: 430px)
+                    margin: 0
+
+            
 
     .descript-footer
         margin-top: 30px
@@ -1567,7 +1715,6 @@ a
         font-size: 16px
 
                    
-
 
 
            

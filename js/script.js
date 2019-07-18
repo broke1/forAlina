@@ -43,9 +43,11 @@ window.addEventListener('load', function() {
    
 
     lightbox.option({
-        'wrapAround': true,
-        'positionFromTop' : 200,
-      });
+      'wrapAround': true,
+      'positionFromTop' : 200,
+      'disableScrolling' : true,
+      
+    });
 
   
 
@@ -112,6 +114,17 @@ window.addEventListener('load', function() {
      let menu = document.querySelector('.menu');
      let header = document.querySelector('.header'); 
 
+     let magic_number_team = 200;
+     let magic_number_offers = 100;
+
+     if (screen.width < 500) {
+      magic_number_team = 0;
+      magic_number_offers = 200;
+     }
+     if (screen.width < 500) {
+      magic_number_offers = 150;
+     }
+
 
 
 
@@ -127,7 +140,7 @@ window.addEventListener('load', function() {
         if (current_scroll > last_scroll) {
                
              all_offers.forEach(function(item,i) {
-                if ((current_scroll+ screen.height) > array_bottom_offer[i]-100) {
+                if ((current_scroll+ screen.height) > array_bottom_offer[i]-magic_number_offers) {
                     item.classList.add('show-offer');  
                 }
             });  
@@ -146,7 +159,7 @@ window.addEventListener('load', function() {
 
 
             teams.forEach(function(item,i) {
-              if ((item.getBoundingClientRect().bottom - screen.height + 200) < 0) {
+              if ((item.getBoundingClientRect().bottom - screen.height + magic_number_team) < 0) {
                   item.classList.add('team-show-block'); 
               }
            });
@@ -160,7 +173,7 @@ window.addEventListener('load', function() {
 
 
             all_offers.forEach(function(item,i) {
-                if ((current_scroll+ screen.height) < array_bottom_offer[i]-100) {
+                if ((current_scroll+ screen.height) < array_bottom_offer[i]-magic_number_offers) {
                     item.classList.remove('show-offer');  
                 }
             });   
@@ -174,7 +187,7 @@ window.addEventListener('load', function() {
             teams = document.querySelectorAll('.team-itself');
 
             teams.forEach(function(item,i) {
-              if ((item.getBoundingClientRect().bottom - screen.height + 200) > 0) {
+              if ((item.getBoundingClientRect().bottom - screen.height + magic_number_team) > 0) {
                   item.classList.remove('team-show-block'); 
               }
            }); 
@@ -465,6 +478,9 @@ new Vue({
       let number_slides = 4;
       if (resolution < 780) {
         number_slides = 2;
+      } 
+      if(resolution < 500) {
+        number_slides = 1;
       }
       
       $('.slider-nav').slick({
