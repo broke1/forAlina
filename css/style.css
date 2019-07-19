@@ -2373,9 +2373,9 @@ a:hover {
   overflow: hidden;
 }
 
-.preloader .preloader-block {
+.preloader .preloader-block svg {
+  height: 180px;
   width: 150px;
-  height: 150px;
 }
 
 .preloader .preloader-block .left-scissor {

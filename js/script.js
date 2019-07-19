@@ -779,9 +779,7 @@ new Vue({
                 });
               }
 
-    // setTimeout(() => {
-    //   document.querySelector('.preloader').style.height = "0vh";
-    // },2000);
+  
 
    
       
