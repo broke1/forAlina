@@ -416,6 +416,9 @@ window.addEventListener('load', function() {
             "pos_zagolovok" : "center"
           },
         ]
+    },
+    mounted: function() {
+      document.querySelector('.preloader').style.height = "0vh";
     }
 })
 
@@ -776,7 +779,12 @@ new Vue({
                 });
               }
 
+    // setTimeout(() => {
+    //   document.querySelector('.preloader').style.height = "0vh";
+    // },2000);
       
+
+
 });
 
 

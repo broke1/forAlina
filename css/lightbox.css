@@ -117,7 +117,11 @@ body.lb-disable-scrolling {
     left: -10%;
   }
 }
-
+@media screen and (max-width: 330px) {
+  .lb-nav a.lb-prev {
+    left: 1%;
+  }
+}
 .lb-nav a.lb-prev:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
@@ -140,6 +144,11 @@ body.lb-disable-scrolling {
 @media screen and (max-width: 380px) {
   .lb-nav a.lb-next {
     right: -10%;
+  }
+}
+@media screen and (max-width: 330px) {
+  .lb-nav a.lb-next {
+    right: 1%;
   }
 }
 

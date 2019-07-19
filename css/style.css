@@ -9,16 +9,6 @@
   src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/Roboto-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Open_Sans";
-  src: url("../fonts/Open_Sans/OpenSans.ttf");
-}
-
 .header .container, .header-contacts, .header-contacts .time-work, .header-contacts .time-work .time-itself, .header-contacts .contacts-itself, .header-contacts .contacts-itself .phone-contacts, .header-contacts .contacts-itself .adress-contacts, .menu .menu-itself, .hello-1-with-img, .common .container, .section-zagolovok, .galery .galery-block, .video .video-slider .slider-for .video-item, .video .video-slider .slider-nav .video-item, .otzivi .otzivi-slider .otziv-item .otziv-container, .modal-form .modal-form-itself form, .consult .container, .consult .container .consult-opisanie, .consult .container .consult-img-block, .team .our-teams .team-block, .team .our-teams .team-block .team-itself, .contacts .contacts-block, .contacts .contacts-block .contacts-itself-block, .contacts .contacts-block .contacts-itself-block .contacts-itself, .contacts .contacts-block .contacts-itself-block .contacts-itself .contacts-text, .contacts .contacts-block .contacts-itself-block .contacts-social, .vacansy .vacansy-block, .vacansy .vacansy-block .vacansy-left, .vacansy .vacansy-block .vacansy-left .vacansy-link, .vacansy .vacansy-block .vacansy-left .vacansy-link p, .vacansy .vacansy-block .vacansy-right, .footer .footer-contacts, .footer .footer-contacts .contacts-without-logo, .footer .footer-contacts .contacts-without-logo .time-work, .footer .footer-contacts .contacts-without-logo .time-work .time-itself, .footer .footer-contacts .contacts-without-logo .contacts-itself, .footer .footer-contacts .contacts-without-logo .contacts-itself .phone-contacts, .footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts, .footer .footer-contacts .contacts-without-logo .socials-link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,7 +23,7 @@
 }
 
 .header-contacts .time-work .time-itself p, .header-contacts .time-work .description-time p, .header-contacts .contacts-itself .phone-contacts a, .header-contacts .contacts-itself .adress-contacts p, .footer .footer-contacts .contacts-without-logo .time-work .time-itself p, .footer .footer-contacts .contacts-without-logo .time-work .description-time p, .footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts p, .footer .descript-footer {
-  font-family: "Roboto";
+  font-family: "Ubuntu";
   font-size: 18px;
   line-height: 140%;
   color: #FFFFFF;
@@ -63,7 +53,7 @@
   height: 60px;
   color: #ffffff;
   border-radius: 3px;
-  font-family: "Open_Sans";
+  font-family: "Ubuntu";
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -148,6 +138,13 @@ a:hover {
   }
   .header .container .logo img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .header .container .logo {
+    margin-left: 10px;
+    min-width: 120px;
   }
 }
 
@@ -237,6 +234,12 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 330px) {
+  .header-contacts .contacts-itself .phone-contacts a {
+    font-size: 12px;
+  }
+}
+
 .header-contacts .contacts-itself .adress-contacts {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -256,6 +259,12 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 330px) {
+  .header-contacts .contacts-itself .adress-contacts p {
+    font-size: 12px;
+  }
+}
+
 @media screen and (max-width: 780px) {
   .header-contacts .contacts-itself .adress-contacts {
     width: 200px;
@@ -263,6 +272,12 @@ a:hover {
   .header-contacts .contacts-itself .adress-contacts img {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .header-contacts .contacts-itself .adress-contacts {
+    width: 190px;
   }
 }
 
@@ -505,6 +520,12 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 330px) {
+  .hello-1-with-img img {
+    width: 100%;
+  }
+}
+
 .hello-1-with-img p {
   font-family: "Ubuntu";
   font-style: normal;
@@ -519,6 +540,12 @@ a:hover {
   .hello-1-with-img p {
     font-size: 18px;
     width: 350px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .hello-1-with-img p {
+    width: 90%;
   }
 }
 
@@ -545,6 +572,12 @@ a:hover {
 @media screen and (max-width: 430px) {
   .offer h2 {
     font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .offer h2 {
+    font-size: 30px;
   }
 }
 
@@ -607,6 +640,12 @@ a:hover {
   .offer .all-offers .offer-item h3 {
     font-size: 25px;
     text-align: right;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .offer .all-offers .offer-item h3 {
+    font-size: 20px;
   }
 }
 
@@ -689,7 +728,7 @@ a:hover {
   height: 60px;
   color: #ffffff;
   border-radius: 3px;
-  font-family: "Open_Sans";
+  font-family: "Ubuntu";
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -891,7 +930,7 @@ a:hover {
   border-radius: 3px;
   padding: 20px 0;
   text-align: center;
-  font-family: "Open_Sans";
+  font-family: "Ubuntu";
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -1047,7 +1086,7 @@ a:hover {
 }
 
 .video .video-slider .slider-for .video-item p {
-  font-family: "Open_Sans";
+  font-family: "Ubuntu";
   font-size: 24px;
   line-height: 100%;
   text-align: center;
@@ -1338,7 +1377,7 @@ a:hover {
 }
 
 .modal-form .modal-form-itself form .zagolovok-form {
-  font-family: "Open_Sans";
+  font-family: "Montserrat";
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -1378,6 +1417,12 @@ a:hover {
   width: 300px;
 }
 
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form input {
+    width: 260px;
+  }
+}
+
 .modal-form .modal-form-itself form textarea {
   border-radius: 5px;
   border: 1px solid darkgray;
@@ -1397,6 +1442,12 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form textarea {
+    width: 260px;
+  }
+}
+
 .modal-form .modal-form-itself form select {
   width: 314px;
   font-family: "Ubuntu";
@@ -1406,9 +1457,27 @@ a:hover {
   padding: 5px;
 }
 
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form select {
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form .button-send-modal {
+    min-height: 50px;
+  }
+}
+
 .modal-form .modal-form-itself form .modal-file {
   position: relative;
   width: 305px;
+}
+
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form .modal-file {
+    width: 270px;
+  }
 }
 
 .modal-form .modal-form-itself form .modal-file label {
@@ -1431,6 +1500,13 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form .modal-file label {
+    width: 160px;
+    font-size: 15px;
+  }
 }
 
 .modal-form .modal-form-itself form .modal-file label:after {
@@ -1460,6 +1536,12 @@ a:hover {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form .modal-file label:after {
+    font-size: 12px;
+  }
+}
+
 .modal-form .modal-form-itself form .accept-block {
   margin-top: 10px;
 }
@@ -1486,6 +1568,12 @@ a:hover {
   color: #333333;
   padding-left: 30px;
   position: relative;
+}
+
+@media screen and (max-width: 330px) {
+  .modal-form .modal-form-itself form .accept-block input[type=checkbox] + label {
+    font-size: 13px;
+  }
 }
 
 .modal-form .modal-form-itself form .accept-block input[type=checkbox] + label:before {
@@ -1525,7 +1613,7 @@ a:hover {
 }
 
 .modal-form .modal-form-itself .description {
-  font-family: "Open_Sans";
+  font-family: "Ubuntu";
   font-size: 25px;
   text-align: center;
   line-height: 180%;
@@ -1574,7 +1662,7 @@ a:hover {
 }
 
 .consult .container .consult-opisanie p:nth-child(1) {
-  font-family: "Open_Sans";
+  font-family: "Montserrat";
   font-weight: bold;
   font-size: 30px;
   line-height: 140%;
@@ -1587,6 +1675,12 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 330px) {
+  .consult .container .consult-opisanie p:nth-child(1) {
+    font-size: 20px;
+  }
+}
+
 .consult .container .consult-opisanie p:nth-child(2) {
   font-family: "Ubuntu";
   font-size: 20px;
@@ -1594,10 +1688,22 @@ a:hover {
   margin-bottom: 50px;
 }
 
+@media screen and (max-width: 330px) {
+  .consult .container .consult-opisanie p:nth-child(2) {
+    font-size: 18px;
+  }
+}
+
 .consult .container .consult-opisanie p:nth-child(3) {
   font-family: "Ubuntu";
   font-size: 20px;
   line-height: 180%;
+}
+
+@media screen and (max-width: 330px) {
+  .consult .container .consult-opisanie p:nth-child(3) {
+    font-size: 18px;
+  }
 }
 
 .consult .container .consult-img-block {
@@ -1647,11 +1753,17 @@ a:hover {
 }
 
 .team .our-teams .team-zagolovok {
-  font-family: "Open_Sans";
+  font-family: "Montserrat";
   font-weight: bold;
   font-size: 30px;
   line-height: 140%;
   position: relative;
+}
+
+@media screen and (max-width: 330px) {
+  .team .our-teams .team-zagolovok {
+    font-size: 25px;
+  }
 }
 
 .team .our-teams .center {
@@ -1665,7 +1777,7 @@ a:hover {
 
 .team .our-teams .right_with_before:before {
   content: "Бровист";
-  font-family: "Open_Sans";
+  font-family: "Montserrat";
   font-weight: bold;
   font-size: 25px;
   line-height: 120%;
@@ -1752,7 +1864,7 @@ a:hover {
 }
 
 .team .our-teams .team-block .team-itself .team-name {
-  font-family: "Open_Sans";
+  font-family: "Montserrat";
   font-weight: bold;
   font-size: 25px;
   line-height: 120%;
@@ -1938,6 +2050,12 @@ a:hover {
           justify-content: flex-start;
 }
 
+@media screen and (max-width: 330px) {
+  .vacansy .vacansy-block .vacansy-left {
+    padding: 0 20px;
+  }
+}
+
 .vacansy .vacansy-block .vacansy-left .vacansy-link {
   text-decoration: none;
   color: #000000;
@@ -1963,6 +2081,12 @@ a:hover {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+}
+
+@media screen and (max-width: 330px) {
+  .vacansy .vacansy-block .vacansy-left .vacansy-link p {
+    min-width: 20px;
+  }
 }
 
 .vacansy .vacansy-block .vacansy-left .vacansy-link p img {
@@ -2221,5 +2345,106 @@ a:hover {
   margin-top: 30px;
   text-align: center;
   font-size: 16px;
+}
+
+.preloader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  top: 0;
+  left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.preloader .preloader-block {
+  width: 150px;
+  height: 150px;
+}
+
+.preloader .preloader-block .left-scissor {
+  -webkit-animation: preloader-left 1s ease 0s infinite;
+          animation: preloader-left 1s ease 0s infinite;
+}
+
+@-webkit-keyframes preloader-left {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 2px) rotate(-15deg);
+            transform: translate(-3px, 2px) rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes preloader-left {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 2px) rotate(-15deg);
+            transform: translate(-3px, 2px) rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.preloader .preloader-block .right-scissor {
+  -webkit-animation: preloader-right 1s ease 0s infinite;
+          animation: preloader-right 1s ease 0s infinite;
+}
+
+@-webkit-keyframes preloader-right {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(3px, -3.5px) rotate(15deg);
+            transform: translate(3px, -3.5px) rotate(15deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes preloader-right {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: translate(3px, -3.5px) rotate(15deg);
+            transform: translate(3px, -3.5px) rotate(15deg);
+  }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+            transform: translate(0, 0) rotate(0deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
