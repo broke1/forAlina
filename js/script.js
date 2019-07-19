@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
                 { name: 'Наша команда', url: "#team"},
                 { name: 'Контакты', url: "#contacts"},
                 { name: 'Вакансии', url: "#vacansy"},
-                { name: 'Прайс-лист', url: "#"},
+                { name: 'Прайс-лист', url: "price-list.html"},
             ],
         }
     })
@@ -782,6 +782,8 @@ new Vue({
     // setTimeout(() => {
     //   document.querySelector('.preloader').style.height = "0vh";
     // },2000);
+
+   
       
 
 

@@ -2447,4 +2447,82 @@ a:hover {
             transform: translate(0, 0) rotate(0deg);
   }
 }
+
+/*  Price.html */
+.table-price {
+  background: black;
+  height: 900px;
+  padding: 80px 0;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.table-price .zagolovok-price {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+
+.table-price .container {
+  dipslay: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.table-price .container .table-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 430px) {
+  .table-price .container .table-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+}
+
+.table-price .container .table-row p {
+  color: #ffffff;
+  font-family: "Ubuntu";
+  font-size: 25px;
+  line-height: 180%;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #ffffff;
+}
+
+@media screen and (max-width: 430px) {
+  .table-price .container .table-row p {
+    width: 100%;
+  }
+}
+
+.table-price .container .table-row p:nth-child(2) {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */
