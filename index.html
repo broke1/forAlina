@@ -115,14 +115,7 @@
                 <h2>{{name}}</h2>
             </div>
             <div class="galery-block">
-                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
-                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
-                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
-                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
-                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
-                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
-                <a href="img/gallery/galery-2.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-2.png" alt="galery-2.png"></a>
-                <a href="img/gallery/galery-1.png" data-lightbox="galery"><span></span><img src="img/gallery/galery-1.png" alt="galery-1.png"></a>
+                <a :href="gallery.url" data-lightbox="galery" v-for="gallery in gallerys"><span></span><img :src="gallery.url" ></a>
             </div>
         </div>
     </section>
@@ -218,7 +211,7 @@
                         <contacts-itself  v-for="item in contacts" :contacts="item"></contacts-itself>
                     </div>
                     <div class="contacts-social">
-                        <social-itself  v-for="item in socials" :socials="item"></social-itself>
+                        <social-itself  v-for="item in socials" :socials="item" target="_blank" ></social-itself>
                     </div>
                 </div>
                 <div class="contacts-map" >

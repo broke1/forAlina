@@ -23,7 +23,7 @@
 }
 
 .header-contacts .time-work .time-itself p, .header-contacts .time-work .description-time p, .header-contacts .contacts-itself .phone-contacts a, .header-contacts .contacts-itself .adress-contacts p, .footer .footer-contacts .contacts-without-logo .time-work .time-itself p, .footer .footer-contacts .contacts-without-logo .time-work .description-time p, .footer .footer-contacts .contacts-without-logo .contacts-itself .adress-contacts p, .footer .descript-footer {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   line-height: 140%;
   color: #FFFFFF;
@@ -53,7 +53,7 @@
   height: 60px;
   color: #ffffff;
   border-radius: 3px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -300,7 +300,7 @@ a:hover {
 }
 
 .menu .menu-itself a {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   line-height: 18px;
   color: #333333;
@@ -527,7 +527,7 @@ a:hover {
 }
 
 .hello-1-with-img p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -563,7 +563,7 @@ a:hover {
 
 .offer h2 {
   margin-bottom: 90px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 40px;
   line-height: 50px;
@@ -616,7 +616,7 @@ a:hover {
 }
 
 .offer .all-offers .offer-item h3 {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 30px;
   line-height: 140%;
@@ -650,7 +650,7 @@ a:hover {
 }
 
 .offer .all-offers .offer-item p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
   line-height: 180%;
   padding: 20px;
@@ -728,7 +728,7 @@ a:hover {
   height: 60px;
   color: #ffffff;
   border-radius: 3px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -752,7 +752,7 @@ a:hover {
 
 .hello-2 .container p {
   max-width: 630px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 17px;
   line-height: 180%;
@@ -801,7 +801,7 @@ a:hover {
 }
 
 .common .container .common-text h2 {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
@@ -809,7 +809,7 @@ a:hover {
 }
 
 .common .container .common-text p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   line-height: 120%;
   margin-top: 20px;
@@ -856,7 +856,7 @@ a:hover {
   background-color: black;
   border-bottom: 2px solid #fff inset;
   color: #fff;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   line-height: 180%;
   color: #C4C4C4;
@@ -885,7 +885,7 @@ a:hover {
 }
 
 .common .container .common-form form .accept-block input[type=checkbox] + label {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   line-height: 140%;
   color: #ffffff;
@@ -906,7 +906,7 @@ a:hover {
 }
 
 .common .container .common-form form .description-accept {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 15px;
   line-height: 180%;
   margin: 20px 0;
@@ -930,7 +930,7 @@ a:hover {
   border-radius: 3px;
   padding: 20px 0;
   text-align: center;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -944,7 +944,7 @@ a:hover {
 }
 
 .common .container .common-form .description {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 15px;
   line-height: 180%;
   margin: 20px 0;
@@ -973,7 +973,7 @@ a:hover {
 }
 
 .section-zagolovok h2 {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 40px;
   line-height: 50px;
@@ -1007,13 +1007,23 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  max-height: 580px;
+  overflow: scroll;
 }
 
 .galery .galery-block a {
+  width: 280px;
   height: 290px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   position: relative;
+}
+
+.galery .galery-block a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .galery .galery-block a span {
@@ -1086,7 +1096,7 @@ a:hover {
 }
 
 .video .video-slider .slider-for .video-item p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 24px;
   line-height: 100%;
   text-align: center;
@@ -1126,6 +1136,12 @@ a:hover {
   opacity: 1;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 430px) {
+  .video .video-slider .slider-for .video-item .video-itself .shadow-video {
+    display: none;
+  }
 }
 
 .video .video-slider .slider-for .video-item .video-itself video {
@@ -1175,7 +1191,7 @@ a:hover {
 }
 
 .video .video-slider .slider-nav .video-item p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
   line-height: 180%;
   text-align: center;
@@ -1271,7 +1287,7 @@ a:hover {
 }
 
 .otzivi .otzivi-slider .otziv-item .otziv-container p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
   line-height: 180%;
   color: #333333;
@@ -1377,7 +1393,7 @@ a:hover {
 }
 
 .modal-form .modal-form-itself form .zagolovok-form {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 120%;
@@ -1409,12 +1425,13 @@ a:hover {
 }
 
 .modal-form .modal-form-itself form input {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   line-height: 180%;
   color: #333333;
   padding: 5px;
   width: 300px;
+  border: 1px solid darkgray;
 }
 
 @media screen and (max-width: 330px) {
@@ -1427,7 +1444,7 @@ a:hover {
   border-radius: 5px;
   border: 1px solid darkgray;
   width: 300px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   line-height: 180%;
   color: #333333;
@@ -1450,7 +1467,7 @@ a:hover {
 
 .modal-form .modal-form-itself form select {
   width: 314px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   line-height: 180%;
   color: #333333;
@@ -1487,7 +1504,7 @@ a:hover {
   width: 195px;
   height: 100%;
   background: #ffffff;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
   line-height: 180%;
   color: #333333;
@@ -1530,7 +1547,7 @@ a:hover {
   cursor: pointer;
   visibility: visible;
   position: absolute;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   line-height: 180%;
   border-radius: 5px;
@@ -1562,7 +1579,7 @@ a:hover {
 }
 
 .modal-form .modal-form-itself form .accept-block input[type=checkbox] + label {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   line-height: 140%;
   color: #333333;
@@ -1589,7 +1606,7 @@ a:hover {
 }
 
 .modal-form .modal-form-itself form .description-accept {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 15px;
   line-height: 180%;
   margin: 10px 0;
@@ -1613,7 +1630,7 @@ a:hover {
 }
 
 .modal-form .modal-form-itself .description {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 25px;
   text-align: center;
   line-height: 180%;
@@ -1662,7 +1679,7 @@ a:hover {
 }
 
 .consult .container .consult-opisanie p:nth-child(1) {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 30px;
   line-height: 140%;
@@ -1682,7 +1699,7 @@ a:hover {
 }
 
 .consult .container .consult-opisanie p:nth-child(2) {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
   line-height: 180%;
   margin-bottom: 50px;
@@ -1695,7 +1712,7 @@ a:hover {
 }
 
 .consult .container .consult-opisanie p:nth-child(3) {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
   line-height: 180%;
 }
@@ -1753,7 +1770,7 @@ a:hover {
 }
 
 .team .our-teams .team-zagolovok {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 30px;
   line-height: 140%;
@@ -1777,7 +1794,7 @@ a:hover {
 
 .team .our-teams .right_with_before:before {
   content: "Бровист";
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 25px;
   line-height: 120%;
@@ -1864,7 +1881,7 @@ a:hover {
 }
 
 .team .our-teams .team-block .team-itself .team-name {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 25px;
   line-height: 120%;
@@ -1874,7 +1891,7 @@ a:hover {
 
 .team .our-teams .team-block .team-itself .team-text {
   text-align: center;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
   line-height: 140%;
 }
@@ -2121,7 +2138,7 @@ a:hover {
 }
 
 .vacansy .vacansy-block .vacansy-right .phone-p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 180%;
@@ -2143,7 +2160,7 @@ a:hover {
 }
 
 .vacansy .vacansy-block .vacansy-right .form-p {
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 180%;
@@ -2286,7 +2303,7 @@ a:hover {
 .footer .footer-contacts .contacts-without-logo .contacts-itself .phone-contacts a {
   margin-left: 10px;
   color: #ffffff;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   line-height: 180%;
 }
@@ -2458,7 +2475,7 @@ a:hover {
 }
 
 .table-price .zagolovok-price {
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 40px;
   line-height: 50px;
@@ -2508,7 +2525,7 @@ a:hover {
 
 .table-price .container .table-row p {
   color: #ffffff;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu', sans-serif;
   font-size: 25px;
   line-height: 180%;
   width: 50%;

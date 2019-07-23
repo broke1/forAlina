@@ -42,12 +42,7 @@ window.addEventListener('load', function() {
    
    
 
-    lightbox.option({
-      'wrapAround': true,
-      'positionFromTop' : 200,
-      'disableScrolling' : true,
-      
-    });
+   
 
   
 
@@ -84,14 +79,17 @@ window.addEventListener('load', function() {
         el: ".footer",
         data: {
           socials: [
-            {url : "#",img: "img/footer/vk.png"},
-            {url : "#",img: "img/footer/instagram.png"},
-            {url : "#",img: "img/footer/twitter.png"},
-            {url : "#",img: "img/footer/facebook.png"},
+            {url : "https://vk.com/kravchenko_gaisina",img: "img/footer/vk.png"},
+            {url : "https://instagram.com/art_me_master?r=nametag",img: "img/footer/instagram.png"},
+            {url : "https://www.facebook.com/%D0%A1%D0%B0%D0%BB%D0%BE%D0%BD-%D0%9A%D1%80%D0%B0%D1%81%D0%BE%D1%82%D1%8B-Art-Me-Master-1014899832179169/",img: "img/footer/facebook.png"},
           ]
         }
       })
 
+//    {url : "#",img: "img/footer/twitter.png"},
+
+
+    
 
 
       let all_offers = document.querySelectorAll('.offer-item');
@@ -290,7 +288,34 @@ window.addEventListener('load', function() {
       new Vue({
           el: '.galery',
           data: {
-              name: "Фотогалерея"
+              name: "Фотогалерея",
+              gallerys: [
+                {url: "img/gallery/img-1-min.jpeg"},{url: "img/gallery/img-2-min.jpeg"},{url: "img/gallery/img-3-min.jpeg"},
+                {url: "img/gallery/img-4-min.jpeg"},{url: "img/gallery/img-5-min.jpeg"},{url: "img/gallery/img-6-min.jpeg"},
+                {url: "img/gallery/img-7-min.jpeg"},{url: "img/gallery/img-8-min.jpeg"},{url: "img/gallery/img-9-min.jpeg"},
+                {url: "img/gallery/img-10-min.jpeg"},{url: "img/gallery/img-11-min.jpeg"},{url: "img/gallery/img-12-min.jpeg"},
+                {url: "img/gallery/img-13-min.jpeg"},{url: "img/gallery/img-14-min.jpeg"},{url: "img/gallery/img-15-min.jpeg"},
+                {url: "img/gallery/img-16-min.jpeg"},{url: "img/gallery/img-17-min.jpeg"},{url: "img/gallery/img-18-min.jpeg"},
+                {url: "img/gallery/img-19-min.jpeg"},{url: "img/gallery/img-20-min.jpeg"},{url: "img/gallery/img-21-min.jpeg"},
+                {url: "img/gallery/img-22-min.jpeg"},{url: "img/gallery/img-23-min.jpeg"},{url: "img/gallery/img-24-min.jpeg"},
+                {url: "img/gallery/img-25-min.jpeg"},{url: "img/gallery/img-26-min.jpeg"},{url: "img/gallery/img-27-min.jpeg"},
+                {url: "img/gallery/img-28-min.jpeg"},{url: "img/gallery/img-29-min.jpeg"},{url: "img/gallery/img-30-min.jpeg"},
+                {url: "img/gallery/img-31-min.jpeg"},{url: "img/gallery/img-32-min.jpeg"},{url: "img/gallery/img-33-min.jpeg"},
+                {url: "img/gallery/img-34-min.jpeg"},{url: "img/gallery/img-35-min.jpeg"},{url: "img/gallery/img-36-min.jpeg"},
+                {url: "img/gallery/img-37-min.jpeg"},{url: "img/gallery/img-38-min.jpeg"},{url: "img/gallery/img-39-min.jpeg"},
+                {url: "img/gallery/img-40-min.jpeg"},{url: "img/gallery/img-41-min.jpeg"},{url: "img/gallery/img-42-min.jpeg"},
+                {url: "img/gallery/img-43-min.jpeg"},{url: "img/gallery/img-44-min.jpeg"},{url: "img/gallery/img-45-min.jpeg"},
+                {url: "img/gallery/img-46-min.jpeg"},{url: "img/gallery/img-47-min.jpeg"},
+
+              ]
+          },
+          mounted: function() {
+            lightbox.option({
+              'wrapAround': true,
+              'positionFromTop' : 200,
+              'disableScrolling' : true,
+              
+            });
           }
       })
 
@@ -451,15 +476,14 @@ new Vue({
         {"img": "img/email.png", "text":"artmemaster@yandex.ru"},
       ],
       socials: [
-        {"img": "img/socials/vk.png", "link":"https://vk.com/"},
-        {"img": "img/socials/instagram.png", "link":"https://vk.com/"},
-        {"img": "img/socials/twitter.png", "link":"https://vk.com/"},
-        {"img": "img/socials/facebook.png", "link":"https://vk.com/"},
+        {"img": "img/socials/vk.png", "link":"https://vk.com/kravchenko_gaisina"},
+        {"img": "img/socials/instagram.png", "link":"https://instagram.com/art_me_master?r=nametag"},
+        {"img": "img/socials/facebook.png", "link":"https://www.facebook.com/%D0%A1%D0%B0%D0%BB%D0%BE%D0%BD-%D0%9A%D1%80%D0%B0%D1%81%D0%BE%D1%82%D1%8B-Art-Me-Master-1014899832179169/"},
       ]
-  },
+  }, 
 })
 
-
+//{"img": "img/socials/twitter.png", "link":"https://vk.com/"},
 
 
     $('.otzivi-slider').slick({
@@ -501,6 +525,11 @@ new Vue({
         item.addEventListener('click', () => {
             item.querySelector('.shadow-video').style.opacity = "0";
         });
+        
+        item.addEventListener('touchend', () => {
+           item.querySelector('.shadow-video').style.opacity = "0";
+        });
+        
     });
    
     
@@ -603,8 +632,6 @@ new Vue({
               value = document.querySelector('input[type=file]').value.split ('\\').pop();
             };
               document.querySelector('.modal-file label').innerHTML = value;
-
-            
        });
 
        document.querySelector('.btn-send_otziv').addEventListener('click', () => {
@@ -666,6 +693,9 @@ new Vue({
        function showModalForm(new_form){
         modal_form.settings = new_form;
         document.querySelector('.modal-form form').reset();
+        if(document.querySelector('.modal-file label')) {
+           document.querySelector('.modal-file label').innerHTML = "Файл не выбран"; 
+        }
         document.querySelector('.modal-form .description').classList.add('hide');
         document.querySelector('.modal-form form').classList.remove('hide');
         document.querySelector('.modal-form').style.visibility = "visible";
@@ -694,6 +724,7 @@ new Vue({
                 let accept = parrent.querySelector('input[type="checkbox"]');
                 let description = parrent.parentElement.querySelector('.description-accept');
                  if (accept.checked) { 
+                     
                   sendModal(document.forms.modal);
                    }  else {
                     description.classList.remove('hide');
@@ -736,7 +767,7 @@ new Vue({
 
                     return;
                     } else {
-                      console.log(this.responseText);
+                     // console.log(this.responseText);
 
                       document.querySelector('.modal-form .description').classList.remove('hide');
                       document.querySelector('.modal-form form').classList.add('hide');
