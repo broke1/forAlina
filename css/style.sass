@@ -1838,7 +1838,6 @@ a
 
 .table-price
     background: rgb(0,0,0)
-    height: 900px
     padding: 80px 0
     border-top: 1px solid #ffffff
     border-bottom: 1px solid #ffffff
@@ -1859,15 +1858,37 @@ a
         justify-content: flex-start
         align-items: flex-start
 
+        .zone
+            font-family: 'Montserrat', sans-serif
+            font-weight: bold
+            font-size: 25px
+            line-height: 30px
+            color: #ffffff
+            margin: 30px 0
+            display: flex
+            justify-content: center
+
+            @media screen and (max-width: 430px)
+                font-size: 20px
+                line-height: 25px
+
+            h1  
+                padding: 20px
+                border: 2px solid $gold
+
         .table-item
 
             .zagolovok
                 font-family: 'Montserrat', sans-serif
                 font-weight: bold
-                font-size: 30px
-                line-height: 50px
+                font-size: 25px
+                line-height: 30px
                 color: #ffffff
                 margin: 30px 0
+
+                @media screen and (max-width: 430px)
+                    font-size: 20px
+                    line-height: 25px
 
                 span
                     width: 20px
@@ -1876,6 +1897,9 @@ a
                     transform: rotate(-45deg)
                     margin-right: 20px
                     display: inline-block
+
+                    @media screen and (max-width: 430px)
+                        margin-left: 20px
                    
                         
 
@@ -1883,12 +1907,16 @@ a
             .zaglavie
                 font-weight: bold
 
+                @media screen and (max-width: 430px)
+                    display: none !important
+
  
             .table-row
                 display: flex
                 flex-flow: row nowrap
                 justify-content: flex-start
                 align-items: center
+                border: 1px solid #ffffff
 
                 @media screen and (max-width: 430px)
                     flex-flow: row wrap
@@ -1896,17 +1924,26 @@ a
                 p
                     color: #ffffff
                     font-family: 'Ubuntu', sans-serif
-                    font-size: 25px
-                    line-height: 180%
+                    font-size: 22px
+                    line-height: 30px
                     width: 50%
                     padding: 20px
-                    border: 1px solid #ffffff
+                    
 
                     @media screen and (max-width: 430px)
                         width: 100%
+                        font-size: 18px
+                        line-height: 25px
+
+                    &:nth-child(1)
+                        border-right: 1px solid #ffffff
 
                     &:nth-child(2)
                         text-align: center
+
+                        @media screen and (max-width: 430px)
+                            border-top: 1px solid #ffffff
+                        
                 
                 .big_row
                     width: 100%
