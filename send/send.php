@@ -87,7 +87,28 @@ class SendForms {
                         if(!$email->Send()) {
                           echo $email->ErrorInfo;
                         }
-        }
+        }  elseif($this->name_form == "vacansy-html") {
+           
+          $email = new PHPMailer();
+                    $email->From      = 'artmemaster@yandex.ru';
+                    $email->FromName  = 'artmemaster.ru';
+                    $email->Subject   = 'Хочу работать у Вас';
+                    $email->Body      = "Мое имя:   ".$this->name." \r\nМой телефон:   ".$this->phone;
+                    $email->CharSet = "UTF-8";
+                    $adres = explode(',',$this->to_mail);
+                    foreach ($adres as $key=>$value) {
+                      $email->AddAddress( $value);
+                    }
+                    
+                    
+                    //$file_to_attach = 'PATH_OF_YOUR_FILE_HERE';
+                    if ($_FILES) {
+                    $email->AddAttachment( $_FILES['file']['tmp_name'] , $_FILES['file']['name'] );
+                    }
+                    if(!$email->Send()) {
+                      echo $email->ErrorInfo;
+                    }
+    } 
         
         
     

@@ -605,12 +605,12 @@ new Vue({
           data: {
             name: "Вакансии",
             vacansys: [
-               {"url" : "#", "name": "Менеджер по подбору лака для ногтей"},
-               {"url" : "#", "name": "Администратор"},
-               {"url" : "#", "name": "Парикмахер-универсал"},
-               {"url" : "#", "name": "Менеджер по подбору лака для ногтей"},
-               {"url" : "#", "name": "Администратор"},
-               {"url" : "#", "name": "Парикмахер-универсал"},
+               {"url" : "/vacansy/vacansy-1.html", "name": "Мастер по маникюру и педикюру"},
+               {"url" : "/vacansy/vacansy-2.html", "name": "Администратор"},
+            //   {"url" : "#", "name": "Парикмахер-универсал"},
+            //   {"url" : "#", "name": "Менеджер по подбору лака для ногтей"},
+            //   {"url" : "#", "name": "Администратор"},
+            //   {"url" : "#", "name": "Парикмахер-универсал"},
             ]
           },
           mounted: function () {
@@ -677,6 +677,30 @@ new Vue({
          file: true,
          select: {
               seen: true,
+              option: [
+                    {name: "Администратор"},
+                    {name: "Менеджер по подбору лака для ногтей"},
+                    {name: "Парикмахер-универсал"},
+                    {name: "Администратор"},
+                    {name: "Менеджер по подбору лака для ногтей"},
+                    {name: "Парикмахер-универсал"},
+                  ]
+          }
+       };
+       showModalForm(new_form);
+      });
+
+      document.querySelector('.btn-send_vacansy_html').addEventListener('click', () => {
+
+        let new_form  = {
+         zagolovok: "Отправьте своё резюмэ",
+         description: 'Резюмэ отправлено',
+         hidden : 'vacansy-html',
+         textarea_placeholder: "Название вакансии",
+         textarea: false,
+         file: true,
+         select: {
+              seen: false,
               option: [
                     {name: "Администратор"},
                     {name: "Менеджер по подбору лака для ногтей"},
@@ -812,9 +836,9 @@ new Vue({
 
   
 
-   
+  
       
-
+ 
 
 });
 

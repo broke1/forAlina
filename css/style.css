@@ -35,7 +35,7 @@
   }
 }
 
-.otzivi .btn-send_otziv, .modal-form .modal-form-itself form .button-send-modal, .consult .container .consult-img-block .btn-send_consult, .vacansy .vacansy-block .vacansy-right .form-p .btn-send_vacansy {
+.otzivi .btn-send_otziv, .modal-form .modal-form-itself form .button-send-modal, .consult .container .consult-img-block .btn-send_consult, .vacansy .vacansy-block .vacansy-right .form-p .btn-send_vacansy, .vacansy-html .container .btn-send_vacansy_html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,7 +66,7 @@
   transition: all 0.4s ease;
 }
 
-.otzivi .btn-send_otziv:hover, .modal-form .modal-form-itself form .button-send-modal:hover, .consult .container .consult-img-block .btn-send_consult:hover, .vacansy .vacansy-block .vacansy-right .form-p .btn-send_vacansy:hover {
+.otzivi .btn-send_otziv:hover, .modal-form .modal-form-itself form .button-send-modal:hover, .consult .container .consult-img-block .btn-send_consult:hover, .vacansy .vacansy-block .vacansy-right .form-p .btn-send_vacansy:hover, .vacansy-html .container .btn-send_vacansy_html:hover {
   background: linear-gradient(89.25deg, #FAF5AD 0.15%, #AE844D 107.92%);
 }
 
@@ -2524,6 +2524,10 @@ a:hover {
   border: 2px solid #E5C577;
 }
 
+.table-price .container .table-item {
+  /* Vacansy.html */
+}
+
 .table-price .container .table-item .zagolovok {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -2631,5 +2635,133 @@ a:hover {
   position: relative;
   border-bottom: 2px solid #E5C577;
   font-weight: bold;
+}
+
+.vacansy-html {
+  background: black;
+  padding: 80px 0;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.vacansy-html .zagolovok-vacansy {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 100px;
+}
+
+.vacansy-html .container .about-company .zagolovok {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  color: #ffffff;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.vacansy-html .container .about-company .zagolovok:after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 1px;
+  background: #E5C577;
+  bottom: -10px;
+  left: -50px;
+}
+
+.vacansy-html .container .about-company .opisanie {
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  width: 70%;
+  padding: 20px;
+  padding-left: 0;
+}
+
+.vacansy-html .container .about-company .opisanie .phone-p {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 180%;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 430px) {
+  .vacansy-html .container .about-company .opisanie .phone-p {
+    font-size: 18px;
+  }
+}
+
+.vacansy-html .container .about-company .opisanie .phone-p a {
+  display: inline-block;
+  text-decoration: none;
+  color: #E5C577;
+  cursor: pointer;
+}
+
+.vacansy-html .container .about-work .zagolovok {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  color: #ffffff;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.vacansy-html .container .about-work .zagolovok:after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 1px;
+  background: #E5C577;
+  bottom: -10px;
+  left: -50px;
+}
+
+.vacansy-html .container .about-work .opisanie {
+  width: 70%;
+  padding: 20px;
+  padding-left: 0;
+}
+
+.vacansy-html .container .about-work .opisanie .spisok {
+  list-style: none;
+}
+
+.vacansy-html .container .about-work .opisanie .spisok li {
+  position: relative;
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+}
+
+.vacansy-html .container .about-work .opisanie .spisok li:before {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 1px;
+  background: #E5C577;
+  bottom: 40%;
+  left: -20px;
+}
+
+.vacansy-html .container .btn-send_vacansy_html {
+  margin: 0;
+  width: 300px;
+  margin-top: 30px;
 }
 /*# sourceMappingURL=style.css.map */
