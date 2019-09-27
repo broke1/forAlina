@@ -305,7 +305,6 @@ window.addEventListener('load', function() {
                 {url: "img/gallery/img-37-min.jpeg"},{url: "img/gallery/img-38-min.jpeg"},{url: "img/gallery/img-39-min.jpeg"},
                 {url: "img/gallery/img-40-min.jpeg"},{url: "img/gallery/img-41-min.jpeg"},{url: "img/gallery/img-42-min.jpeg"},
                 {url: "img/gallery/img-43-min.jpeg"},{url: "img/gallery/img-44-min.jpeg"},{url: "img/gallery/img-45-min.jpeg"},
-                {url: "img/gallery/img-46-min.jpeg"},{url: "img/gallery/img-47-min.jpeg"},
 
               ]
           },
